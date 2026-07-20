@@ -1,0 +1,2205 @@
+/* =========================================================
+   DF COLLECTION - ADMIN
+   Nowy layout pod nowy config.tpl
+   ========================================================= */
+
+.dfc-admin-scope {
+  overflow: visible !important;
+  padding: 0;
+  margin: 0;
+  color: #24313c;
+}
+
+.dfc-admin-scope *,
+.dfc-admin-scope *::before,
+.dfc-admin-scope *::after {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.dfc-admin-scope .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* =========================================================
+   PANELE
+   ========================================================= */
+
+.dfc-admin-scope .dfc-admin-panel {
+  border: 1px solid #dbe4ec;
+  border-radius: 20px;
+  overflow: visible !important;
+  background: #ffffff;
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.06);
+  margin-bottom: 26px !important;
+}
+
+.dfc-admin-scope .dfc-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px 18px 24px;
+  border-bottom: 1px solid #e4ebf1;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.dfc-admin-scope .dfc-panel-head__left {
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-panel-head__left h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+  font-weight: 800 !important;
+  color: #25313c !important;
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  top: 0 !important;
+}
+
+.dfc-admin-scope .dfc-panel-head__left h3 i {
+  margin: 0;
+  color: #6a7a88;
+  font-size: 21px;
+}
+
+.dfc-admin-scope .dfc-panel-subtitle {
+  margin: 8px 0 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6c7a87;
+}
+
+.dfc-admin-scope .dfc-panel-head__right {
+  flex: 0 0 auto;
+}
+
+.dfc-admin-scope .dfc-edit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: #edf6fb;
+  border: 1px solid #cfe2ee;
+  color: #244054;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.dfc-admin-scope .dfc-edit-badge--new {
+  background: #eefaf0;
+  border-color: #d4ebd8;
+  color: #245233;
+}
+
+/* =========================================================
+   FORMULARZ
+   ========================================================= */
+
+.dfc-admin-scope .dfc-admin-form {
+  padding: 24px;
+  background: #f7fafc;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.dfc-admin-scope .dfc-form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(340px, 0.95fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.dfc-admin-scope .dfc-form-main,
+.dfc-admin-scope .dfc-form-side {
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-form-main {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.dfc-admin-scope .dfc-card {
+  background: #ffffff;
+  border: 1px solid #dde6ee;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+}
+
+.dfc-admin-scope .dfc-card--module {
+  border-color: #d8e4ee;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.045);
+}
+
+.dfc-admin-scope .dfc-card--module .dfc-card__head {
+  background: linear-gradient(180deg, #fdfefe 0%, #f3f8fc 100%);
+}
+
+.dfc-admin-scope .dfc-card--general .dfc-card__head {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdfe 100%);
+}
+
+.dfc-admin-scope .dfc-card__head {
+  padding: 18px 20px 14px 20px;
+  border-bottom: 1px solid #e8eef3;
+}
+
+.dfc-admin-scope .dfc-card__head h4 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #25313c;
+}
+
+.dfc-admin-scope .dfc-card__head p {
+  margin: 7px 0 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6c7985;
+}
+
+.dfc-admin-scope .dfc-card__body {
+  padding: 20px;
+}
+
+.dfc-admin-scope .dfc-row {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.dfc-admin-scope .dfc-row + .dfc-row {
+  margin-top: 18px;
+}
+
+.dfc-admin-scope .dfc-row--top {
+  margin-bottom: 4px;
+}
+
+.dfc-admin-scope .dfc-col {
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-col--grow {
+  flex: 1 1 auto;
+}
+
+.dfc-admin-scope .dfc-col--toggle {
+  flex: 0 0 210px;
+}
+
+.dfc-admin-scope .dfc-btn-duplicate i.material-icons {
+  font-size: 30px;
+  line-height: 1;
+}
+
+/* =========================================================
+   GRIDY
+   ========================================================= */
+
+.dfc-admin-scope .dfc-grid {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 4px;
+}
+
+.dfc-admin-scope .dfc-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 24px;
+  row-gap: 18px;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-grid--2 > .dfc-form-group,
+.dfc-admin-scope .dfc-grid--3 > .dfc-form-group {
+  min-width: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.dfc-admin-scope .dfc-form-group {
+  margin-bottom: 18px !important;
+  clear: both;
+  overflow: visible !important;
+  max-width: none;
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-form-group:last-child {
+  margin-bottom: 0 !important;
+}
+
+.dfc-admin-scope .form-group::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.dfc-admin-scope .dfc-form-group > label,
+.dfc-admin-scope .dfc-form-group .control-label,
+.dfc-admin-scope .dfc-label {
+  display: block !important;
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+  float: none !important;
+  width: auto !important;
+  max-width: none !important;
+  text-align: left !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  font-weight: 800 !important;
+  color: #33414d !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  word-break: break-word;
+}
+
+.dfc-admin-scope .dfc-form-group--full {
+  grid-column: 1 / -1;
+  display: grid;
+}
+
+/* =========================================================
+   INPUTY / SELECTY / TEXTAREA
+   ========================================================= */
+
+.dfc-admin-scope .dfc-input,
+.dfc-admin-scope .dfc-select2,
+.dfc-admin-scope .dfc-select-limit,
+.dfc-admin-scope .dfc-file-name,
+.dfc-admin-scope .form-control,
+.dfc-admin-scope input[type="text"],
+.dfc-admin-scope input[type="number"],
+.dfc-admin-scope textarea,
+.dfc-admin-scope select {
+  width: 100% !important;
+  max-width: 100% !important;
+  border: 1px solid #cad6e0 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: #2d3944 !important;
+  box-shadow: none !important;
+  min-height: 46px;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.dfc-admin-scope textarea.form-control,
+.dfc-admin-scope textarea.dfc-input {
+  min-height: 132px;
+  resize: vertical;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.dfc-admin-scope .dfc-input:focus,
+.dfc-admin-scope .form-control:focus,
+.dfc-admin-scope input[type="text"]:focus,
+.dfc-admin-scope input[type="number"]:focus,
+.dfc-admin-scope select:focus,
+.dfc-admin-scope textarea:focus {
+  border-color: #84c7df !important;
+  box-shadow: 0 0 0 4px rgba(127, 198, 223, 0.17) !important;
+  background: #fff !important;
+}
+
+.dfc-admin-scope .dfc-input-heading {
+  max-width: 420px !important;
+}
+
+.dfc-admin-scope .dfc-select-limit {
+  max-width: 110px !important;
+}
+
+.dfc-admin-scope #dfc_slider_sort,
+.dfc-admin-scope .dfc-select-slider-sort {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.dfc-admin-scope .dfc-help-block,
+.dfc-admin-scope .help-block {
+  margin: 8px 0 0 0 !important;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7783;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+/* =========================================================
+   TOGGLE
+   ========================================================= */
+
+.dfc-admin-scope .dfc-form-group-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dfc-admin-scope .dfc-form-group-toggle-inline {
+  justify-content: flex-start;
+}
+
+.dfc-admin-scope .dfc-form-group-toggle .dfc-toggle {
+  position: relative;
+  display: inline-block;
+  width: 58px !important;
+  height: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-top: 2px;
+  flex: 0 0 auto;
+}
+
+.dfc-admin-scope .dfc-form-group-toggle .dfc-toggle input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+.dfc-admin-scope .dfc-form-group-toggle .dfc-track {
+  position: absolute;
+  inset: 0;
+  width: 58px !important;
+  background: #d8e0e7;
+  border-radius: 999px;
+  transition: background .18s ease;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+.dfc-admin-scope .dfc-form-group-toggle .dfc-track::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 7px rgba(0,0,0,.16);
+  transition: transform .18s ease;
+}
+
+.dfc-admin-scope .dfc-form-group-toggle .dfc-toggle input:checked + .dfc-track {
+  background: #45b25e;
+}
+
+.dfc-admin-scope .dfc-form-group-toggle .dfc-toggle input:checked + .dfc-track::before {
+  transform: translateX(28px);
+}
+
+/* =========================================================
+   SELECT2
+   ========================================================= */
+
+.dfc-admin-scope .select2-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.dfc-admin-scope .select2-container .select2-selection {
+  width: 100% !important;
+}
+
+.dfc-admin-scope .select2-container--default .select2-selection--single {
+  height: 46px !important;
+  border: 1px solid #cad6e0 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.dfc-admin-scope .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 44px !important;
+  color: #2f3b46 !important;
+  padding-left: 14px !important;
+  padding-right: 36px !important;
+}
+
+.dfc-admin-scope .select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 44px !important;
+  right: 8px !important;
+}
+
+.dfc-admin-scope .select2-container--default .select2-selection--multiple {
+  min-height: 46px !important;
+  border: 1px solid #cad6e0 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.dfc-admin-scope .select2-dropdown {
+  border: 1px solid #cad6e0 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.dfc-admin-scope .select2-search--dropdown {
+  padding: 10px !important;
+  background: #f8fbfd;
+  border-bottom: 1px solid #edf2f6;
+}
+
+.dfc-admin-scope .select2-search--dropdown .select2-search__field {
+  border: 1px solid #d5dee7 !important;
+  border-radius: 9px !important;
+  min-height: 38px;
+  padding: 7px 10px;
+}
+
+.dfc-admin-scope .select2-results__option {
+  padding: 10px 12px !important;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.dfc-admin-scope .select2-results__option--highlighted[aria-selected] {
+  background: #eaf6fb !important;
+  color: #1f3340 !important;
+}
+
+/* =========================================================
+   UPLOADY
+   ========================================================= */
+
+.dfc-admin-scope .dfc-upload-group {
+  margin-bottom: 20px !important;
+}
+
+.dfc-admin-scope .dfc-upload-group:last-child {
+  margin-bottom: 0 !important;
+}
+
+.dfc-admin-scope .dfc-upload-row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+.dfc-admin-scope .dfc-upload-row > * {
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-file-input {
+  display: none !important;
+}
+
+.dfc-admin-scope .dfc-upload-row .input-group-addon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  background: #eef4f8;
+  border: 1px solid #cad6e0;
+  border-right: 0;
+  color: #61727f;
+}
+
+.dfc-admin-scope .dfc-upload-row .dfc-file-name {
+  flex: 1 1 auto;
+  min-width: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  background: #f3f7fa !important;
+  color: #5f6f7a !important;
+  font-weight: 600;
+  cursor: default;
+}
+
+.dfc-admin-scope .dfc-upload-row .input-group-btn {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.dfc-admin-scope .dfc-file-button {
+  height: 46px;
+  border-radius: 0 !important;
+  border: 1px solid #cad6e0 !important;
+  background: #fff !important;
+  color: #2f3b46 !important;
+  font-weight: 800;
+  min-width: 126px;
+  box-shadow: none !important;
+  padding: 0 16px !important;
+}
+
+.dfc-admin-scope .dfc-file-button:hover {
+  background: #f5f9fc !important;
+  border-color: #b8c8d5 !important;
+}
+
+/* =========================================================
+   FEATURED PRODUCT PREVIEW
+   ========================================================= */
+
+.dfc-admin-scope .dfc-featured-preview {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #dbe5ed;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f5f9fc 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.dfc-admin-scope .dfc-featured-preview--hidden {
+  display: none;
+}
+
+.dfc-admin-scope .dfc-featured-preview__inner {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.dfc-admin-scope .dfc-featured-preview__image-wrap {
+  width: 112px;
+  min-width: 112px;
+  max-width: 112px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #dbe5ed;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.dfc-admin-scope .dfc-featured-preview__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+
+.dfc-admin-scope .dfc-featured-preview__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.dfc-admin-scope .dfc-featured-preview__label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #edf6fb;
+  border: 1px solid #d5e7f1;
+  color: #395364;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dfc-admin-scope .dfc-featured-preview__name {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 800;
+  color: #25313c;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+.dfc-admin-scope .dfc-featured-preview__meta {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #667482;
+  font-weight: 600;
+}
+
+.dfc-admin-scope .dfc-featured-preview__remove {
+  margin-top: 4px;
+  min-height: 40px;
+  padding: 9px 14px !important;
+  border-radius: 12px !important;
+  border: 1px solid #cad6e0 !important;
+  background: #ffffff !important;
+  color: #2f3b46 !important;
+  font-weight: 800 !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.dfc-admin-scope .dfc-featured-preview__remove:hover {
+  background: #f5f9fc !important;
+  border-color: #b8c8d5 !important;
+  transform: translateY(-1px);
+}
+
+.dfc-admin-scope .dfc-featured-preview__remove:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(127, 198, 223, 0.18) !important;
+}
+
+/* =========================================================
+   PODGLĄDY OBRAZÓW
+   ========================================================= */
+
+.dfc-admin-scope .dfc-image-preview-block {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f9fbfd;
+  border: 1px solid #dbe5ed;
+  border-radius: 14px;
+}
+
+.dfc-admin-scope .dfc-image-preview-top {
+  margin-bottom: 10px;
+}
+
+.dfc-admin-scope .dfc-image-preview-link {
+  display: inline-block;
+}
+
+.dfc-admin-scope .dfc-image-preview {
+  width: 100%;
+  max-width: 260px;
+  border: 1px solid #e3ebf1 !important;
+  border-radius: 12px;
+  padding: 4px;
+  background: #fff;
+  display: block;
+}
+
+.dfc-admin-scope .dfc-image-preview-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dfc-admin-scope .dfc-delete-checkbox {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 7px;
+  margin: 0 !important;
+  font-size: 13px;
+  color: #4b5661;
+  font-weight: 700;
+  text-transform: none !important;
+}
+
+.dfc-admin-scope .dfc-image-meta {
+  font-size: 12px !important;
+  color: #6b7783 !important;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   STOPKA FORMULARZA
+   ========================================================= */
+
+.dfc-admin-scope .dfc-panel-footer {
+  margin: 24px -24px -24px -24px !important;
+  padding: 16px 24px !important;
+  background: linear-gradient(180deg, #fbfdff 0%, #f2f7fa 100%);
+  border-top: 1px solid #dbe4ec;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  clear: both;
+}
+
+.dfc-admin-scope .dfc-panel-footer-actions {
+  float: none !important;
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dfc-admin-scope .dfc-panel-footer .btn {
+  min-height: 44px;
+  padding: 10px 18px !important;
+  border-radius: 12px !important;
+  font-weight: 800;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.dfc-admin-scope .dfc-panel-footer .btn-default {
+  background: #fff !important;
+  border: 1px solid #cad6e0 !important;
+  color: #2f3b46 !important;
+}
+
+.dfc-admin-scope .dfc-panel-footer .btn-default:hover {
+  background: #f6fafc !important;
+  border-color: #b8c8d5 !important;
+}
+
+.dfc-admin-scope .dfc-btn-save {
+  background: #f8fcff !important;
+}
+
+.dfc-admin-scope .dfc-btn-delete {
+  margin-left: 8px;
+}
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+.dfc-admin-scope .dfc-table-wrap {
+  overflow-x: auto;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.dfc-admin-scope .dfc-admin-table {
+  width: 100%;
+  min-width: 1520px;
+  margin-bottom: 0 !important;
+  background: #fff;
+}
+
+.dfc-admin-scope .dfc-admin-table thead th {
+  background: linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
+  border-bottom: 1px solid #dce5ec !important;
+  border-top: 0 !important;
+  color: #2a3641;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  vertical-align: middle !important;
+  padding: 14px 12px !important;
+  white-space: nowrap;
+}
+
+.dfc-admin-scope .dfc-admin-table tbody td {
+  background: #fff;
+  border-top: 1px solid #edf2f6 !important;
+  vertical-align: middle !important;
+  padding: 14px 12px !important;
+  color: #33414d;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dfc-admin-scope .dfc-admin-table tbody tr:hover td {
+  background: #fbfdff;
+}
+
+.dfc-admin-scope .dfc-col-handle {
+  width: 42px;
+}
+
+.dfc-admin-scope .dfc-handle {
+  cursor: grab !important;
+  user-select: none;
+  font-size: 22px !important;
+  color: #6c7a86 !important;
+  font-weight: 700;
+  text-align: center;
+  width: 42px;
+}
+
+.dfc-admin-scope .dfc-handle:active {
+  cursor: grabbing !important;
+}
+
+.dfc-admin-scope .dfc-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .03em;
+}
+
+.dfc-admin-scope .dfc-status-badge--on {
+  background: #eef8f1;
+  color: #24723b;
+  border: 1px solid #d7eedd;
+}
+
+.dfc-admin-scope .dfc-status-badge--off {
+  background: #f4f6f8;
+  color: #6c7883;
+  border: 1px solid #e1e7ec;
+}
+
+.dfc-admin-scope .dfc-table-description-col {
+  min-width: 260px;
+  max-width: 320px;
+}
+
+.dfc-admin-scope .dfc-table-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4b5864;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.dfc-admin-scope .dfc-empty-description {
+  color: #8a97a3;
+  font-style: italic;
+}
+
+.dfc-admin-scope .dfc-table-sort-col {
+  min-width: 150px;
+  white-space: normal;
+}
+
+/* =========================================================
+   OBRAZY W TABELI
+   ========================================================= */
+
+.dfc-admin-scope .dfc-table-image-col {
+  min-width: 190px;
+}
+
+.dfc-admin-scope .dfc-table-image-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.dfc-admin-scope .dfc-table-image-thumb-wrap {
+  width: 84px;
+  min-width: 84px;
+  max-width: 84px;
+  overflow: hidden;
+}
+
+.dfc-admin-scope .dfc-table-image-thumb {
+  width: 84px !important;
+  height: 64px !important;
+  max-width: 84px !important;
+  max-height: 64px !important;
+  object-fit: cover;
+  border: 1px solid #e3ebf1;
+  border-radius: 10px;
+  background: #fff;
+  display: block;
+}
+
+.dfc-admin-scope .dfc-table-image-url {
+  font-size: 11px;
+  line-height: 1.35;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  color: #42505c;
+}
+
+.dfc-admin-scope .dfc-table-image-meta {
+  color: #6b7783;
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+.dfc-admin-scope .dfc-empty-image {
+  color: #7a8691;
+  font-weight: 600;
+}
+
+/* =========================================================
+   AKCJE W TABELI
+   ========================================================= */
+
+.dfc-admin-scope .dfc-table-actions {
+  min-width: 170px;
+  white-space: nowrap;
+}
+
+.dfc-admin-scope .dfc-table-actions .btn {
+  border-radius: 10px !important;
+  font-weight: 800;
+  box-shadow: none !important;
+  min-height: 38px;
+  padding: 8px 14px !important;
+}
+
+.dfc-admin-scope .dfc-inline-form {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.dfc-admin-scope .dfc-btn-edit {
+    margin-right: 5px;
+    margin: 5px 4px;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background: -moz-linear-gradient(center top,#f9f9f9,#e3e3e3) 0 0;
+    background: -webkit-gradient(linear, center top, center bottom, from(#f9f9f9), to(#e3e3e3)) 0 0;
+    border-color: #ccc #bbb #a0a0a0;
+    border-style: solid;
+    border-width: 1px;
+    border-right: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+    border-radius: 3px;
+    outline: medium;
+}
+.dfc-admin-scope .dfc-btn-edit:hover {
+   border-color: #aaa #999 #888;
+}
+
+
+/* =========================================================
+   SORTABLE
+   ========================================================= */
+
+.dfc-admin-scope #dfc-sortable {
+  table-layout: auto;
+  width: 100%;
+}
+
+.dfc-admin-scope #dfc-sortable tr {
+  transition: background-color .12s ease, box-shadow .12s ease;
+}
+
+.dfc-admin-scope #dfc-sortable tr.dfc-chosen {
+  background: #f5fbff;
+  outline: 2px solid #8ac5ff;
+  outline-offset: -2px;
+}
+
+.dfc-admin-scope #dfc-sortable tr.dfc-ghost {
+  opacity: .7;
+  background: #eaf5ff;
+  outline: 2px dashed #8ac5ff;
+  outline-offset: -2px;
+}
+
+.dfc-admin-scope #dfc-sortable img,
+.dfc-admin-scope #dfc-sortable a {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.dfc-admin-scope .sortable-fallback {
+  background: #fff !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+  cursor: grabbing !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.18) !important;
+}
+
+/* =========================================================
+   BUTTONY / FOCUS
+   ========================================================= */
+
+.dfc-admin-scope .btn.btn-default,
+.dfc-admin-scope .btn.btn-danger {
+  box-shadow: none !important;
+}
+
+.dfc-admin-scope .btn.btn-default:focus,
+.dfc-admin-scope .btn.btn-danger:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(127, 198, 223, 0.18) !important;
+}
+
+/* =========================================================
+   OVERFLOW / FIXY
+   ========================================================= */
+
+.dfc-admin-scope,
+.dfc-admin-scope .dfc-admin-panel,
+.dfc-admin-scope .dfc-admin-form,
+.dfc-admin-scope .dfc-form-group,
+.dfc-admin-scope .input-group,
+.dfc-admin-scope .select2-container,
+.dfc-admin-scope .select2-dropdown {
+  overflow: visible !important;
+}
+
+.dfc-range-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dfc-range-input {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 6px;
+    border-radius: 999px;
+    background: #d9e1ea;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.dfc-range-input::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 999px;
+    background: #d9e1ea;
+}
+
+.dfc-range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-top: -6px;
+    border-radius: 50%;
+    background: #25b9d7;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+.dfc-range-input::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: #d9e1ea;
+}
+
+.dfc-range-input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #25b9d7;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+.dfc-range-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.dfc-range-min,
+.dfc-range-max {
+    color: #7a8a99;
+}
+
+.dfc-range-current {
+    font-weight: 700;
+    color: #232323;
+    min-width: 52px;
+    text-align: center;
+}
+
+.dfc-table-compare-start-col {
+    min-width: 120px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.dfc-compare-start-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #eef6ff;
+    border: 1px solid #bcd8f2;
+    color: #1f4e79;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.dfc-table-compare-label-col {
+    min-width: 180px;
+    max-width: 220px;
+    vertical-align: middle;
+}
+
+.dfc-compare-label-preview {
+    display: inline-block;
+    max-width: 100%;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    border: 1px solid #d8e1ea;
+    color: #334155;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.dfc-table-title-col {
+    min-width: 150px;
+}
+
+.dfc-table-title-main {
+    font-weight: 600;
+    color: #2c3340;
+}
+
+/* =========================================
+   DF COLLECTION – wykluczone kategorie
+   ukrycie tagów w polu select2, zostają tylko badge na dole
+   ========================================= */
+
+.dfc-form-group--excluded .select2-container {
+  width: 100% !important;
+}
+
+.dfc-form-group--excluded .select2-container .select2-choices,
+.dfc-form-group--excluded .select2-container .select2-selection--multiple {
+  min-height: 56px !important;
+  border: 1px solid #b9c7d5 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  padding: 8px 12px !important;
+  overflow: hidden !important;
+}
+
+/* ukryj zaznaczone elementy WEWNĄTRZ pola */
+.dfc-form-group--excluded .select2-container .select2-search-choice,
+.dfc-form-group--excluded .select2-container .select2-selection__choice,
+.dfc-form-group--excluded .select2-container .select2-search-choice-close,
+.dfc-form-group--excluded .select2-container .select2-selection__choice__remove {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* wyzeruj listę choice, żeby nic nie wypychało inputa */
+.dfc-form-group--excluded .select2-container .select2-choices {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
+.dfc-form-group--excluded .select2-container .select2-choices > li.select2-search-choice,
+.dfc-form-group--excluded .select2-container .select2-selection__rendered > li.select2-selection__choice {
+  display: none !important;
+}
+
+/* pole wpisywania ma zostać widoczne */
+.dfc-form-group--excluded .select2-container .select2-search-field,
+.dfc-form-group--excluded .select2-container .select2-search--inline {
+  display: block !important;
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dfc-form-group--excluded .select2-container .select2-search-field input,
+.dfc-form-group--excluded .select2-container .select2-search--inline .select2-search__field {
+  width: 100% !important;
+  min-width: 100% !important;
+  height: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+}
+
+/* na wszelki wypadek schowaj renderowaną listę tagów */
+.dfc-form-group--excluded .select2-container .select2-selection__rendered {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dfc-form-group--excluded .dfc-help-block {
+  margin-top: 10px;
+}
+
+.dfc-excluded-preview {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed #d7e0ea;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dfc-excluded-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #cfdcf7;
+  background: #eef4ff;
+  color: #2f4a7f;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.dfc-excluded-badge__text {
+  white-space: nowrap;
+}
+
+.dfc-excluded-badge__remove {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #2f4a7f;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dfc-excluded-badge__remove:hover {
+  color: #c62828;
+}
+
+/* =========================================
+   DF COLLECTION – produkt polecany / Select2
+   ========================================= */
+
+#s2id_dfc_featured_product .select2-choice,
+#s2id_autogen1 .select2-choice {
+  min-height: 44px;
+  display: flex !important;
+  align-items: center;
+  padding: 6px 34px 6px 10px !important;
+}
+
+.dfc-featured-select-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.dfc-featured-select-choice__thumb {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f4f6f8;
+  border: 1px solid #dbe3ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dfc-featured-select-choice__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.dfc-featured-select-choice__meta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dfc-featured-select-choice__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #243447;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.dfc-featured-select-choice__id {
+  font-size: 11px;
+  color: #7a8a9a;
+  line-height: 1.2;
+}
+
+/* dropdown */
+.select2-result.dfc-featured-result {
+  padding: 0 !important;
+}
+
+.dfc-featured-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  min-width: 0;
+}
+
+.dfc-featured-option__thumb {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f4f6f8;
+  border: 1px solid #dbe3ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dfc-featured-option__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.dfc-featured-option__meta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dfc-featured-option__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #243447;
+  line-height: 1.3;
+}
+
+.dfc-featured-option__id {
+  font-size: 11px;
+  color: #7a8a9a;
+  line-height: 1.2;
+}
+
+.select2-results .select2-highlighted .dfc-featured-option__name,
+.select2-results .select2-highlighted .dfc-featured-option__id {
+  color: #fff;
+}
+
+/* pusty wybór */
+.dfc-featured-option--empty,
+.dfc-featured-select-choice--empty {
+  font-size: 13px;
+  color: #7a8a9a;
+  padding: 2px 0;
+}
+
+/* =========================================
+   DF COLLECTION – select kategorii
+   ========================================= */
+
+#s2id_dfc_category_select .select2-choice {
+  min-height: 44px;
+  display: flex !important;
+  align-items: center;
+  padding: 6px 34px 6px 10px !important;
+}
+
+.dfc-category-select-choice {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.dfc-category-select-choice__meta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dfc-category-select-choice__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #243447;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 360px;
+}
+
+.dfc-category-select-choice__id {
+  font-size: 11px;
+  color: #7a8a9a;
+  line-height: 1.2;
+}
+
+/* dropdown kategorii */
+.select2-result.dfc-category-result {
+  padding: 0 !important;
+}
+
+.dfc-category-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 12px;
+  min-width: 0;
+}
+
+.dfc-category-option__indent {
+  flex: 0 0 auto;
+  color: #9aa8b6;
+  font-weight: 700;
+  line-height: 1.35;
+  padding-top: 1px;
+}
+
+.dfc-category-option__meta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dfc-category-option__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #243447;
+  line-height: 1.3;
+}
+
+.dfc-category-option__id {
+  font-size: 11px;
+  color: #7a8a9a;
+  line-height: 1.2;
+}
+
+.select2-results .select2-highlighted .dfc-category-option__name,
+.select2-results .select2-highlighted .dfc-category-option__id,
+.select2-results .select2-highlighted .dfc-category-option__indent {
+  color: #fff;
+}
+
+.dfc-category-select-choice--empty {
+  font-size: 13px;
+  color: #7a8a9a;
+  padding: 2px 0;
+}
+
+.dfc-table-featured-col {
+    min-width: 260px;
+}
+
+.dfc-table-featured-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.dfc-table-featured-thumb-wrap {
+    flex: 0 0 64px;
+    width: 64px;
+}
+
+.dfc-table-featured-thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #dbe3ea;
+    background: #fff;
+    padding: 4px !important;
+}
+
+.dfc-table-featured-thumb--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a96a3;
+    font-size: 18px;
+}
+
+.dfc-table-featured-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dfc-table-featured-name {
+    font-weight: 500;
+    line-height: 1.45;
+    color: #2e3a46;
+}
+
+.dfc-table-badges-col {
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.dfc-table-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.dfc-table-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f6f6f6;
+    border: 1px solid #e3e3e3;
+    color: #232323;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dfc-table-badge:nth-child(4n+1) {
+    background: #eef3fb;
+    border-color: #d9e4f5;
+    color: #4d6484;
+}
+
+.dfc-table-badge:nth-child(4n+2) {
+    background: #f8eeee;
+    border-color: #eedcdc;
+    color: #8a6666;
+}
+
+.dfc-table-badge:nth-child(4n+3) {
+    background: #edf6ef;
+    border-color: #dcebdd;
+    color: #5d7a61;
+}
+
+.dfc-table-badge:nth-child(4n+4) {
+    background: #fbf8ee;
+    border-color: #eee7d4;
+    color: #8a7a52;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1400px) {
+  .dfc-admin-scope .dfc-form-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dfc-admin-scope .dfc-form-side {
+    order: 2;
+  }
+
+  .dfc-admin-scope .dfc-form-main {
+    order: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .dfc-admin-scope .dfc-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .dfc-admin-scope .dfc-panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 18px 16px 18px;
+  }
+
+  .dfc-admin-scope .dfc-panel-head__left h3 {
+    font-size: 24px !important;
+  }
+
+  .dfc-admin-scope .dfc-admin-form {
+    padding: 18px;
+  }
+
+  .dfc-admin-scope .dfc-card__head,
+  .dfc-admin-scope .dfc-card__body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .dfc-admin-scope .dfc-grid--2,
+  .dfc-admin-scope .dfc-grid--3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dfc-admin-scope .dfc-row {
+    flex-direction: column;
+  }
+
+  .dfc-admin-scope .dfc-col--toggle {
+    flex: 1 1 auto;
+  }
+
+  .dfc-admin-scope .dfc-panel-footer {
+    margin: 22px -18px -18px -18px !important;
+    padding: 14px 18px !important;
+  }
+
+  .dfc-admin-scope .dfc-panel-footer-actions {
+    justify-content: flex-start;
+  }
+
+  .dfc-admin-scope .dfc-upload-row {
+    flex-wrap: wrap;
+    overflow: visible;
+    gap: 8px;
+  }
+
+  .dfc-admin-scope .dfc-upload-row .input-group-addon {
+    border-right: 1px solid #cad6e0;
+    border-radius: 12px;
+    min-height: 46px;
+  }
+
+  .dfc-admin-scope .dfc-upload-row .dfc-file-name {
+    border-left: 1px solid #cad6e0 !important;
+    border-right: 1px solid #cad6e0 !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+  }
+
+  .dfc-admin-scope .dfc-upload-row .input-group-btn {
+    width: 100%;
+  }
+
+  .dfc-admin-scope .dfc-file-button {
+    width: 100%;
+    border-radius: 12px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .dfc-admin-scope .dfc-panel-head__left h3 {
+    font-size: 21px !important;
+  }
+
+  .dfc-admin-scope .dfc-card__head h4 {
+    font-size: 18px;
+  }
+
+  .dfc-admin-scope .dfc-panel-footer .btn {
+    width: 100%;
+  }
+
+  .dfc-admin-scope .dfc-panel-footer-actions {
+    width: 100%;
+  }
+
+  .dfc-admin-scope .dfc-btn-delete {
+    margin-left: 0;
+  }
+
+  .dfc-admin-scope .dfc-featured-preview__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .dfc-admin-scope .dfc-featured-preview__image-wrap {
+    width: 100%;
+    max-width: 180px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .dfc-admin-scope .dfc-featured-preview__content {
+    align-items: stretch;
+  }
+
+  .dfc-admin-scope .dfc-featured-preview__label {
+    align-self: flex-start;
+  }
+
+  .dfc-admin-scope .dfc-featured-preview__remove {
+    width: 100%;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   DF COLLECTION – BUNDLE / Najczęściej kupowane razem (ADMIN)
+   ========================================================= */
+
+.dfc-admin-scope .dfc-card--bundle {
+  margin-top: 18px;
+  border-color: #d9e4ec;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.045);
+}
+
+.dfc-admin-scope .dfc-card--bundle .dfc-card__head {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);
+}
+
+.dfc-admin-scope #dfc-bundle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dfc-admin-scope .dfc-bundle-row {
+  padding: 18px;
+  border: 1px solid #dbe5ed;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.035);
+}
+
+.dfc-admin-scope .dfc-bundle-row + .dfc-bundle-row {
+  margin-top: 0;
+}
+
+.dfc-admin-scope .dfc-bundle-row__top,
+.dfc-admin-scope .dfc-bundle-row__bottom {
+  width: 100%;
+}
+
+.dfc-admin-scope .dfc-bundle-row__bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 18px;
+  margin-top: 14px;
+  align-items: start;
+}
+
+.dfc-admin-scope .dfc-bundle-row__product,
+.dfc-admin-scope .dfc-bundle-row__label,
+.dfc-admin-scope .dfc-bundle-row__side {
+  min-width: 0;
+}
+
+.dfc-admin-scope .dfc-bundle-row__side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.dfc-admin-scope .dfc-bundle-row__remove {
+  display: flex;
+}
+
+.dfc-admin-scope .dfc-bundle-row__remove .btn {
+  min-height: 42px;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  font-weight: 800;
+  box-shadow: none !important;
+}
+
+.dfc-admin-scope .dfc-bundle-row__remove .btn-danger {
+  background: #fff5f5 !important;
+  border: 1px solid #efcaca !important;
+  color: #b42318 !important;
+}
+
+.dfc-admin-scope .dfc-bundle-row__remove .btn-danger:hover {
+  background: #ffeaea !important;
+  border-color: #e8b3b3 !important;
+}
+
+.dfc-admin-scope .dfc-bundle-actions {
+  margin-top: 16px;
+}
+
+.dfc-admin-scope .dfc-bundle-actions .btn {
+  min-height: 44px;
+  padding: 10px 16px !important;
+  border-radius: 12px !important;
+  border: 1px solid #cad6e0 !important;
+  background: #fff !important;
+  color: #2f3b46 !important;
+  font-weight: 800;
+  box-shadow: none !important;
+}
+
+.dfc-admin-scope .dfc-bundle-actions .btn:hover {
+  background: #f5f9fc !important;
+  border-color: #b8c8d5 !important;
+}
+
+/* =========================================================
+   PODGLĄD WYBRANEGO PRODUKTU W BUNDLE
+   ========================================================= */
+
+.dfc-admin-scope .dfc-bundle-preview {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #dbe5ed;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #fbfdff 0%, #f5f9fc 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.dfc-admin-scope .dfc-bundle-preview--hidden {
+  display: none;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__inner {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__image-wrap {
+  width: 92px;
+  min-width: 92px;
+  max-width: 92px;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #dbe5ed;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.dfc-admin-scope .dfc-bundle-preview__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eef6fb;
+  border: 1px solid #d5e7f1;
+  color: #395364;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__name {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 800;
+  color: #25313c;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__meta {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #667482;
+  font-weight: 600;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__remove {
+  margin-top: 4px;
+  min-height: 38px;
+  padding: 8px 14px !important;
+  border-radius: 12px !important;
+  border: 1px solid #cad6e0 !important;
+  background: #ffffff !important;
+  color: #2f3b46 !important;
+  font-weight: 800 !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.dfc-admin-scope .dfc-bundle-preview__remove:hover {
+  background: #f5f9fc !important;
+  border-color: #b8c8d5 !important;
+  transform: translateY(-1px);
+}
+
+.dfc-admin-scope .dfc-bundle-preview__remove:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(127, 198, 223, 0.18) !important;
+}
+
+/* =========================================================
+   CHECKBOX BUNDLE
+   ========================================================= */
+
+.dfc-admin-scope .dfc-bundle-checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  margin: 0 !important;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #dbe5ed;
+  border-radius: 12px;
+  background: #f9fbfd;
+  font-size: 13px !important;
+  line-height: 1.45;
+  font-weight: 700;
+  color: #31404c;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.dfc-admin-scope .dfc-bundle-checkbox input[type="checkbox"] {
+  margin: 0 !important;
+  flex: 0 0 auto;
+}
+
+.dfc-admin-scope .dfc-bundle-checkbox span {
+  display: block;
+  min-width: 0;
+}
+
+/* =========================================================
+   SELECT2 WEWNĄTRZ BUNDLE
+   ========================================================= */
+
+.dfc-admin-scope .dfc-bundle-row .select2-container {
+  width: 100% !important;
+}
+
+.dfc-admin-scope .dfc-bundle-row .select2-container--default .select2-selection--single {
+  height: 46px !important;
+  border: 1px solid #cad6e0 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+.dfc-admin-scope .dfc-bundle-row .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 44px !important;
+  padding-left: 14px !important;
+  padding-right: 36px !important;
+  color: #2f3b46 !important;
+}
+
+/* =========================================================
+   RESPONSIVE – BUNDLE ADMIN
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+  .dfc-admin-scope .dfc-bundle-row {
+    padding: 16px;
+  }
+
+  .dfc-admin-scope .dfc-bundle-row__bottom {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .dfc-admin-scope .dfc-bundle-row__side {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .dfc-admin-scope .dfc-bundle-preview__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .dfc-admin-scope .dfc-bundle-preview__image-wrap {
+    width: 100%;
+    max-width: 160px;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .dfc-admin-scope .dfc-bundle-preview__content {
+    align-items: stretch;
+  }
+
+  .dfc-admin-scope .dfc-bundle-preview__label {
+    align-self: flex-start;
+  }
+
+  .dfc-admin-scope .dfc-bundle-preview__remove,
+  .dfc-admin-scope .dfc-bundle-row__remove .btn,
+  .dfc-admin-scope .dfc-bundle-actions .btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   DF COLLECTION – sekcja badge / lepsze oddzielenie
+   ========================================================= */
+
+.dfc-admin-scope .dfc-badges-section {
+  margin-top: 22px !important;
+  padding-top: 22px;
+  border-top: 1px solid #dbe5ed;
+  position: relative;
+}
+
+.dfc-admin-scope .dfc-badges-section::before {
+  content: "BADGE NA FRONCIE";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef6fb;
+  border: 1px solid #d5e7f1;
+  color: #395364;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dfc-admin-scope .dfc-badges-section > label {
+  margin-bottom: 10px !important;
+  font-size: 13px !important;
+  color: #25313c !important;
+}
+
+.dfc-admin-scope .dfc-badges-section .dfc-grid--2 {
+  margin-top: 14px;
+}
+
+.dfc-admin-scope .dfc-badges-section .alert.alert-info {
+  margin-top: 14px !important;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #d9e7f2;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f8fbfe 0%, #f1f7fb 100%);
+  color: #48606f;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+
+/* =========================================================
+   DF COLLECTION – tabela bundle preview
+   ========================================================= */
+
+.dfc-table-bundle-col {
+  min-width: 280px;
+}
+
+.dfc-table-bundle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dfc-table-bundle-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dfc-table-bundle-thumb-wrap {
+  width: 48px;
+  min-width: 48px;
+}
+
+.dfc-table-bundle-thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #dbe3ea;
+  background: #fff;
+  padding: 3px;
+}
+
+.dfc-table-bundle-thumb--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a96a3;
+  font-size: 14px;
+}
+
+.dfc-table-bundle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.dfc-table-bundle-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2e3a46;
+  line-height: 1.3;
+}

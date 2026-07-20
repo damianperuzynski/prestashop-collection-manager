@@ -1,0 +1,3331 @@
+.dfc {
+    max-width: 1720px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+#dfc-slider {
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.dfc-products {
+    display: flex;
+}
+
+.dfc-title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.dfc-main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.dfc-left-wrap {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.dfc-left-link {
+    display: block;
+}
+
+.dfc-left-link-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.dfc-left > picture,
+.dfc-left > a > picture,
+.dfc-left .dfc-compare picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dfc-left > picture img,
+.dfc-left > a > picture img,
+.dfc-left .dfc-compare img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Overlay na dole obrazka */
+.dfc-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 30px 16px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .45) 100%);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.dfc-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.dfc-right .product-miniature {
+    height: 100%;
+}
+
+@media (max-width: 991px) {
+    .dfc-main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.dfc-products {
+    margin-top: 24px;
+}
+
+.dfc-placeholder {
+    padding: 24px;
+    background: #f3f3f3;
+    border-radius: 12px;
+    text-align: center;
+    color: #666;
+}
+
+/* Strzałki w overlayu */
+.dfc-nav {
+    border: 0;
+    background: #fff;
+    color: #000;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+#dfc-slider .slick-next,
+#dfc-slider .slick-prev {
+    background-image: none;
+    width: 40px;
+    height: 40px;
+}
+
+.dfc-heading {
+    font-size: 44px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.dfc-subheading {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dfc-all-link.dfc-all-link-left,
+.dfc-all-link.dfc-all-link-slider {
+    margin: 16px auto 0;
+    width: 100%;
+    align-self: center;
+}
+
+/* =========================================
+   DFC FEATURED COUNTDOWN
+   pod lewym przyciskiem "POZNAJ KOLEKCJĘ"
+   ========================================= */
+
+.dfc-featured-countdown-wrap {
+    width: 100%;
+    margin-top: 14px;
+}
+.dfc-featured-countdown-wrap .psproductcountdown {
+	display: flex;
+	justify-content: center;
+}
+
+.dfc-featured-countdown {
+    width: 100%;
+    min-height: 76px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.dfc-featured-countdown-inner {
+    width: 100%;
+    min-height: 165px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fbf9f6 0%, #f7f3ee 100%);
+    border: 1px solid #ebe3d8;
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.75) inset,
+        0 4px 14px rgba(35,35,35,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.dfc-featured-countdown-inner:empty {
+    display: none;
+}
+
+.dfc-featured-countdown .countdown,
+.dfc-featured-countdown .pspc-countdown,
+.dfc-featured-countdown [class*="countdown"] {
+    width: 100%;
+}
+
+.dfc-featured-countdown .countdown,
+.dfc-featured-countdown .pspc-countdown {
+    margin: 0 !important;
+}
+
+/* żeby moduł licznika nie rozwalał szerokości */
+.dfc-featured-countdown * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.dfc-slider-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: .02em;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+
+.dfc-slider-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.dfc-slider-count {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #7a7a7a;
+  letter-spacing: 0.01em;
+}
+
+/* jakby licznik był pusty */
+.dfc-slider-count:empty {
+  display: none;
+}
+
+#dfcollection .slick-dots li button:before {
+    font-size: 51px;
+    position: absolute;
+    display: flex;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    border: 1px solid #232323;
+    color: rgba(255, 255, 255, .15);
+    justify-content: center;
+    align-items: center;
+}
+
+#dfcollection .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #00000000;
+    background: #232323;
+}
+
+.dfc-left {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* =========================================
+   DF COLLECTION – animacja całego lewego bloku
+   także dla trybu compare
+   ========================================= */
+
+.dfc-left-scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.dfc-left-scene.current {
+    z-index: 2;
+    transform: translateX(0);
+}
+
+.dfc-left-scene.next {
+    z-index: 1;
+}
+
+.dfc-left-animating .dfc-left-scene.next {
+    z-index: 3;
+}
+
+.dfc-left-scene .dfc-overlay {
+    z-index: 8;
+}
+
+.dfc-left-scene .dfc-compare {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.dfc-left-scene .dfc-compare-before,
+.dfc-left-scene .dfc-compare-after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dfc-left-scene .dfc-compare-before picture,
+.dfc-left-scene .dfc-compare-before img,
+.dfc-left-scene .dfc-compare-after img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dfc-left-scene .dfc-compare-before img,
+.dfc-left-scene .dfc-compare-after img {
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.dfc-left .dfc-pic-current,
+.dfc-left .dfc-pic-next {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dfc-left .dfc-pic-current {
+    z-index: 2;
+}
+
+.dfc-left .dfc-pic-next {
+    z-index: 1;
+}
+
+.dfc-left .dfc-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: translateX(0);
+    transition: transform 1s ease;
+}
+
+.dfc-left .dfc-img.current {
+    z-index: 2;
+}
+
+.dfc-left .dfc-img.next {
+    z-index: 1;
+}
+
+.dfc-left.to-next .dfc-img.current {
+    transform: translateX(-100%);
+}
+
+.dfc-left.to-prev .dfc-img.current {
+    transform: translateX(100%);
+}
+
+/* warstwa .next dostaje w JS start: translateX(±100%), a potem do 0 */
+
+/* overlay (jak miałeś wcześniej – tylko upewnij się, że nad obrazem) */
+.dfc-left .dfc-overlay {
+    z-index: 3;
+}
+
+.dfc-overlay-nav {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9;
+}
+
+.dfc-left .dfc-arrows {
+    position: static;
+    display: flex;
+    gap: 8px;
+}
+
+.dfc-collection-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 74px;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #232323;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+}
+
+.dfc-collection-counter-current,
+.dfc-collection-counter-total {
+    display: inline-block;
+    min-width: 1ch;
+    text-align: center;
+}
+
+.dfc-collection-counter-separator {
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    opacity: 0.85;
+    display: inline-block;
+}
+
+.dfc-left .dfc-title {
+    position: absolute;
+    left: 16px;
+    bottom: 20px;
+    text-transform: uppercase;
+}
+
+.dfc-tabs {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+    scrollbar-width: none;
+    padding: 6px 0 20px;
+}
+
+.dfc-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.dfc-tabs.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+/* =========================================
+   DF COLLECTION – custom scrollbar pod tabsami
+   ========================================= */
+
+.dfc-tabs-scrollbar {
+    display: none;
+    margin-top: -6px;
+    margin-bottom: 18px;
+    padding: 0 2px;
+}
+
+.dfc-tabs-scrollbar.is-visible {
+    display: block;
+}
+
+.dfc-tabs-scrollbar-track {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(35, 35, 35, 0.10);
+    overflow: hidden;
+}
+
+.dfc-tabs-scrollbar-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    border-radius: 999px;
+    background: #232323;
+    transform: translateX(0);
+    transition: transform .18s ease, width .18s ease, opacity .18s ease;
+    opacity: 0.9;
+}
+
+.dfc-tabs-scrollbar-track:hover .dfc-tabs-scrollbar-thumb {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .dfc-tabs-scrollbar {
+        margin-top: -2px;
+        margin-bottom: 16px;
+        padding: 0 10px;
+    }
+
+    .dfc-tabs-scrollbar-track {
+        height: 5px;
+    }
+}
+
+/* Pojedynczy tab zawsze w jednej linii, bez zawijania */
+.dfc-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    font-size: 26px;
+    color: #999;
+    cursor: pointer;
+    transition: color .2s ease;
+    scroll-snap-align: start;
+    text-transform: uppercase;
+    padding: 6px 10px;
+}
+
+.dfc-tab:hover {
+    transition: none;
+    background-color: transparent;
+    color: #555;
+}
+
+/* Stan aktywny/wybrany */
+.dfc-tab.active,
+.dfc-tab[aria-selected="true"] {
+    color: #000;
+    font-weight: 600;
+}
+
+/* Drobna dostępność: po fokusie klawiaturą */
+.dfc-tab:focus {
+    outline: none;
+}
+
+.dfc-subheading-link {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  gap: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+.dfc-subheading-link {
+  position: relative;
+}
+
+.dfc-subheading-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: all .25s ease;
+  transform: translateX(-50%);
+}
+
+.dfc-subheading-link:hover::after {
+  width: 60%;
+}
+
+@media (max-width: 1440px) {
+    .dfc-left {
+        height: 500px;
+    }
+}
+
+@media (max-width: 991px) {
+    .dfc-main-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 876px) {
+    .dfc-left {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dfc-left {
+        height: 400px;
+    }
+
+    .dfc {
+        margin-top: 40px;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    #dfc-slider .js-product.product {
+        padding: 0 15px;
+    }
+
+    .dfc-overlay-nav {
+        right: 12px;
+        bottom: 12px;
+        gap: 8px;
+    }
+
+    .dfc-collection-counter {
+        min-width: 64px;
+        height: 34px;
+        padding: 0 12px;
+        font-size: 16px;
+        gap: 6px;
+    }
+
+    .dfc-collection-counter-separator {
+        width: 14px;
+    }
+}
+
+@media (max-width: 620px) {
+    .dfc-left {
+        height: 350px;
+    }
+}
+
+/* Prawa kolumna – kontener */
+.dfc-featured {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Każdy „slajd” – domyślnie RELATIVE, żeby rodzic miał naturalną wysokość */
+.dfc-featured-item {
+    transition: none;
+    will-change: transform;
+}
+
+/* Slajd „next” jest absolutny i czeka poza ekranem */
+.dfc-featured-item.next {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* Na czas animacji aktualny slajd też robimy absolutnym (tylko w trakcie) */
+.dfc-featured.anim .dfc-featured-item.current {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.dfc-featured-item.current {
+    z-index: 1;
+}
+
+.dfc-featured-item.next {
+    z-index: 2;
+}
+
+/* Kierunki przesuwu */
+
+/* DFCollection featured: miejsce na hover panel add-to-cart */
+.dfc-featured .product-miniature {
+    padding-bottom: 72px;
+}
+
+@media (max-width: 767.98px) {
+    .dfc-featured .product-miniature {
+        padding-bottom: 10px;
+    }
+}
+
+.dfc-featured .thumbnail-container {
+    overflow: visible;
+}
+
+.dfc-featured .js-product-miniature {
+    box-shadow: none;
+}
+
+.dfc-featured .js-product-miniature .product-description {
+    align-items: center;
+}
+
+/* FIX tylko dla kontenera dfcollection, bez psucia wewnętrznej logiki dfpv */
+.dfc-main-grid > .dfc-left-wrap,
+.dfc-main-grid > .dfc-right,
+.dfc-featured,
+.dfc-featured-item,
+.dfc-featured .product-miniature,
+.dfc-featured .thumbnail-container,
+.dfc-featured .product-description,
+.dfc-featured .product-description-bottom,
+.dfc-featured .product-description-bottom .variant-links,
+.dfc-featured .dfpv-miniature {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.dfc-main-grid > .dfc-right {
+    min-width: 0;
+}
+
+.dfc-featured .dfpv-miniature-group {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* DFCollection – ukrywanie strzałek na końcach */
+.dfc-slider-section .slider-prev.is-hidden,
+.dfc-slider-section .slider-next.is-hidden {
+  display: none !important;
+}
+
+/* =========================================
+   DF COLLECTION – badge / mini cechy kolekcji
+   pod zdjęciem, nad short description
+   ========================================= */
+
+.dfc-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    align-items: center;
+}
+
+.dfc-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 36px;
+    padding: 7px 13px;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    border: 1px solid transparent;
+    background: #f4f4f4;
+    color: #2a2a2a;
+
+    transition: all 0.25s ease;
+}
+
+/* hover – delikatny */
+.dfc-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* 1 */
+.dfc-badge:nth-child(1) {
+    background: #f1f5f9;
+    color: #334155;
+    border-color: #e2e8f0;
+}
+
+/* 2 */
+.dfc-badge:nth-child(2) {
+    background: #fef3f2;
+    color: #7a2e2e;
+    border-color: #fde2e0;
+}
+
+/* 3 */
+.dfc-badge:nth-child(3) {
+    background: #f0fdf4;
+    color: #2f5d3a;
+    border-color: #dcfce7;
+}
+
+/* 4 */
+.dfc-badge:nth-child(4) {
+    background: #fffbeb;
+    color: #7a5a2e;
+    border-color: #fef3c7;
+}
+
+@media (max-width: 991px) {
+    .dfc-badges {
+        margin-top: 14px;
+    }
+
+    .dfc-badge {
+        font-size: 13px;
+        min-height: 36px;
+        padding: 7px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dfc-badges {
+        gap: 8px;
+        margin-top: 12px;
+        padding: 0 5px;
+    }
+
+    .dfc-badge {
+        font-size: 13px;
+        min-height: 34px;
+        padding: 7px 12px;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .dfc-badges {
+        gap: 7px;
+    }
+
+    .dfc-badge {
+        width: 100%;
+        justify-content: flex-start;
+        border-radius: 12px;
+        padding: 10px 12px;
+    }
+}
+
+.dfc-short-description-text {
+    overflow: hidden;
+    max-height: 5.5em;
+    width: 100%;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #444;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* collapsed state */
+.dfc-short-description-text.collapsed {
+    position: relative;
+}
+
+/* 🔥 lepszy fade */
+.dfc-short-description-text.collapsed::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.8em; /* ↑ trochę większy fade */
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.85) 60%,
+        #fff 100%
+    );
+
+    pointer-events: none;
+}
+
+/* =========================================
+   DFC – ZAKRES KOLEKCJI / wersja premium
+   ========================================= */
+
+.dfc-collection-scope {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 12px;
+    margin-bottom: 8px;
+    padding: 12px 16px;
+
+    background: linear-gradient(180deg, #fbf9f6 0%, #f7f3ee 100%);
+    border: 1px solid #ebe3d8;
+    border-radius: 14px;
+
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.75) inset,
+        0 4px 14px rgba(35,35,35,0.04);
+
+    min-width: 0;
+}
+
+.dfc-collection-scope__label {
+    flex: 0 0 auto;
+
+    font-size: 11px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: #a38f73;
+
+    position: relative;
+    padding-right: 12px;
+}
+
+.dfc-collection-scope__label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 50%;
+    background: #ccb892;
+    opacity: 0.9;
+}
+
+.dfc-collection-scope__text {
+    min-width: 0;
+
+    font-size: 14px;
+    line-height: 1.65;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #2f2a24;
+
+    opacity: 0.95;
+}
+
+/* ładniejsze separatory jeśli wpisujesz " · " albo "•" */
+.dfc-collection-scope__text {
+    word-spacing: 0.08em;
+}
+
+@media (max-width: 767.98px) {
+    .dfc-collection-scope {
+        gap: 10px;
+        padding: 11px 13px;
+        border-radius: 12px;
+    }
+
+    .dfc-collection-scope__label {
+        font-size: 10px;
+        letter-spacing: 0.11em;
+        padding-right: 10px;
+    }
+
+    .dfc-collection-scope__text {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 499.98px) {
+    .dfc-collection-scope {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .dfc-collection-scope__label {
+        padding-right: 0;
+    }
+
+    .dfc-collection-scope__label::after {
+        display: none;
+    }
+
+    .dfc-collection-scope__text {
+        width: 100%;
+    }
+}
+
+
+
+/* =========================================
+   DF COLLECTION – IMAGE COMPARE
+   ========================================= */
+
+.dfc-compare {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.dfc-compare-before,
+.dfc-compare-after {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dfc-compare-before {
+    z-index: 1;
+}
+
+.dfc-compare-after {
+    z-index: 2;
+}
+
+.dfc-compare-before picture,
+.dfc-compare-before img,
+.dfc-compare-after img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dfc-compare-before .dfc-img.current {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: none !important;
+    transition: none !important;
+    z-index: 1;
+}
+
+.dfc-compare-after img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.dfc-compare-range {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    z-index: 6;
+    cursor: ew-resize;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.dfc-compare-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.dfc-compare-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1px;
+    width: 2px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+.dfc-compare-grip {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.25),
+        0 0 0 0 rgba(255,255,255,0.65);
+    animation: dfcComparePulse 1.8s ease-out infinite;
+    will-change: transform, box-shadow;
+}
+
+.dfc-compare-label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 7;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 40px;
+    max-width: calc(100% - 32px);
+    padding: 8px 14px 8px 10px;
+    border-radius: 999px;
+
+    color: #fff;
+    background: rgba(0, 0, 0, 0.38);
+    border: 1px solid rgba(255,255,255,0.16);
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.16),
+        0 1px 0 rgba(255,255,255,0.06) inset;
+
+    pointer-events: none;
+
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
+    animation: dfcLabelIn 0.6s ease forwards;
+}
+
+.dfc-compare-label__icon {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #fff;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.14);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.12),
+        0 0 0 1px rgba(255,255,255,0.03) inset;
+}
+
+.dfc-compare-label__icon svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.dfc-compare-label__text {
+    display: block;
+    min-width: 0;
+
+    font-size: 13px;
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dfc-compare:hover .dfc-compare-label {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255,255,255,0.22);
+    transform: translateY(0) scale(1.02);
+}
+
+.dfc-compare:hover .dfc-compare-label__icon {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(1px);
+}
+
+.dfc-compare-label__icon {
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+@keyframes dfcLabelIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dfc-compare:hover .dfc-compare-label {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(0) scale(1.02);
+}
+
+.dfc-left .dfc-overlay {
+    z-index: 8;
+}
+
+.dfc-compare:hover .dfc-compare-grip {
+    animation-duration: 1.2s;
+}
+
+@keyframes dfcComparePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow:
+            0 2px 8px rgba(0,0,0,0.25),
+            0 0 0 0 rgba(255,255,255,0.65);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        box-shadow:
+            0 2px 10px rgba(0,0,0,0.28),
+            0 0 0 10px rgba(255,255,255,0.18);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow:
+            0 2px 8px rgba(0,0,0,0.25),
+            0 0 0 18px rgba(255,255,255,0);
+    }
+}
+
+
+/* =========================================
+   DFC BUNDLE – Najczęściej kupowane razem
+   ========================================= */
+
+.dfc-bundle {
+  margin-top: 26px;
+  padding: 22px 22px 20px;
+  border: 1px solid #e8e2d9;
+  border-radius: 24px;
+  background: #f8f5f1;
+  box-shadow: 0 10px 30px rgba(35, 35, 35, 0.04);
+}
+
+.dfc-bundle-heading {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a7f73;
+}
+
+.dfc-bundle-items {
+  display: grid;
+  margin-bottom: 22px;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  padding-top: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #d8cec1 transparent;
+}
+
+.dfc-bundle-items::-webkit-scrollbar {
+  height: 6px;
+}
+
+.dfc-bundle-items::-webkit-scrollbar-thumb {
+  background: #d8cec1;
+  border-radius: 999px;
+}
+
+.dfc-bundle-item {
+  position: relative;
+  flex: 0 0 132px;
+  min-width: 132px;
+}
+
+.dfc-bundle-item:not(:last-child)::after {
+  content: "+";
+  position: absolute;
+  top: 66px;
+  right: -32px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f6f1ea 100%);
+  border: 1px solid #e2d7ca;
+  color: #b88943;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow:
+    0 6px 16px rgba(35, 35, 35, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.dfc-bundle-item__image_section {
+  display: flex;
+  justify-content: center;
+} 
+.dfc-bundle-item__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 96px;
+  padding: 10px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #ebe4da;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.dfc-bundle-item__image:hover {
+  transform: translateY(-2px);
+  border-color: #d8cec1;
+  box-shadow: 0 10px 20px rgba(35, 35, 35, 0.06);
+}
+
+.dfc-bundle-item__image img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.dfc-bundle-item__image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: #9a9188;
+  text-align: center;
+}
+
+.dfc-bundle-item__content {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+}
+
+.dfc-bundle-item__label-link {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dfc-bundle-item__label-link:hover {
+  text-decoration: none;
+  color: inherit;
+  opacity: 1;
+}
+
+.dfc-bundle-item__label-link:focus {
+  outline: none;
+}
+
+.dfc-bundle-item__label-link:focus-visible {
+  outline: 2px solid #232323;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.dfc-bundle-item__label {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #232323;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.2s ease;
+}
+
+.dfc-bundle-item__label-link:hover .dfc-bundle-item__label {
+  color: #c59d5f;
+}
+
+.dfc-bundle-item__price-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+.dfc-bundle-item__price-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  min-height: 22px;
+}
+
+.dfc-bundle-item__price-regular {
+  font-size: 13px;
+  line-height: 1.2;
+  color: #9c938a;
+  text-decoration: line-through;
+  transition: color 0.22s ease, opacity 0.22s ease, transform 0.22s ease;
+}
+
+.dfc-bundle-item__discount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #2aa84a;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dfc-bundle-item__price-current {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #232323;
+  transition: color 0.22s ease, transform 0.22s ease, text-shadow 0.22s ease;
+}
+
+.dfc-bundle-item__delivery {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fbf9f6 0%, #f5f0e9 100%);
+  border: 1px solid #ebe2d7;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.75) inset,
+    0 3px 10px rgba(35,35,35,0.03);
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #6f6458;
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+.dfc-bundle-item__delivery::before {
+  content: "Dostawa";
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a38f73;
+}
+
+.dfc-bundle-item:hover .dfc-bundle-item__price-current {
+  color: #b88943;
+  transform: translateY(-1px);
+  text-shadow: 0 1px 10px rgba(184, 137, 67, 0.14);
+}
+
+.dfc-bundle-item:hover .dfc-bundle-item__price-regular {
+  color: #8f8477;
+  opacity: 1;
+}
+
+.dfc-bundle-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e8e2d9;
+}
+
+.dfc-bundle-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dfc-bundle-selected-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 5px;
+  min-width: 0;
+}
+
+.dfc-bundle-selected-count__label {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a59a8d;
+}
+
+.dfc-bundle-selected-count__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #232323;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+  border: 1px solid #d9cebf;
+  box-shadow: 0 4px 14px rgba(35, 35, 35, 0.06);
+}
+
+.dfc-bundle-savings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+.dfc-bundle-savings__label {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a7f73;
+}
+
+.dfc-bundle-savings__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #dff3e5;
+  color: #1f8a46;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+  border: 1px solid #9fd3ad;
+  box-shadow: 0 4px 14px rgba(42, 168, 74, 0.15);
+}
+
+.dfc-bundle:hover .dfc-bundle-savings__value {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+.dfc-bundle-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+  min-width: 0;
+}
+
+.dfc-bundle-total__label {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a7f73;
+}
+
+.dfc-bundle-total__value {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  color: #232323;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.dfc-bundle-delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fcfaf7 0%, #f6f1ea 100%);
+  border: 1px solid #e7ded2;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.85) inset,
+    0 8px 20px rgba(35,35,35,0.04);
+}
+
+.dfc-bundle-delivery__time,
+.dfc-bundle-delivery__shipping {
+  position: relative;
+  padding-left: 28px;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: #5f554a;
+}
+
+.dfc-bundle-delivery__time::before,
+.dfc-bundle-delivery__shipping::before {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.dfc-bundle-delivery__time::before {
+  content: "⏱";
+  background: #efe7dc;
+}
+
+.dfc-bundle-delivery__shipping::before {
+  content: "↗";
+  background: #efe7dc;
+  top: 6px;
+}
+
+.dfc-bundle-delivery__time strong,
+.dfc-bundle-delivery__shipping strong {
+  font-weight: 600;
+  color: #8a7f73;
+}
+
+.dfc-bundle-delivery__time + .dfc-bundle-delivery__shipping {
+  padding-top: 6px;
+  border-top: 1px dashed #dfd5c8;
+}
+
+.dfc-bundle-regular-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+  min-width: 0;
+}
+
+.dfc-bundle-regular-total__label {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a59a8d;
+}
+
+.dfc-bundle-regular-total__value {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1;
+  font-weight: 500;
+  color: #7a7a7a;
+  text-decoration: line-through;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.dfc-bundle-add {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  margin-top: 6px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dfc-bundle-add.is-loading {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.dfc-bundle-add[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1199.98px) {
+  .dfc-bundle {
+    padding: 20px 18px 18px;
+  }
+
+  .dfc-bundle-items {
+    gap: 34px;
+  }
+
+  .dfc-bundle-item {
+    flex-basis: 122px;
+    min-width: 122px;
+  }
+
+  .dfc-bundle-item__image {
+    width: 122px;
+    height: 90px;
+  }
+
+  .dfc-bundle-item:not(:last-child)::after {
+    right: -30px;
+  }
+
+  .dfc-bundle-total__value {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dfc-bundle {
+    margin-top: 20px;
+    padding: 18px 16px 16px;
+    border-radius: 20px;
+  }
+
+  .dfc-bundle-heading {
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+
+  .dfc-bundle-items {
+    gap: 30px;
+    margin-bottom: 18px;
+  }
+
+  .dfc-bundle-item {
+    flex-basis: 112px;
+    min-width: 112px;
+  }
+
+  .dfc-bundle-item__image {
+    width: 112px;
+    height: 84px;
+    border-radius: 16px;
+  }
+
+  .dfc-bundle-item:not(:last-child)::after {
+    top: 60px;
+    right: -26px;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+  }
+
+  .dfc-bundle-item__label {
+    min-height: 34px;
+    font-size: 12px;
+  }
+
+  .dfc-bundle-item__price-top {
+    gap: 6px;
+  }
+
+  .dfc-bundle-item__price-regular {
+    font-size: 12px;
+  }
+
+  .dfc-bundle-item__discount {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .dfc-bundle-item__price-current {
+    font-size: 16px;
+  }
+
+  .dfc-bundle-footer {
+    gap: 14px;
+  }
+
+  .dfc-bundle-total {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .dfc-bundle-total__value {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .dfc-bundle-selected-count {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dfc-bundle-selected-count__value {
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .dfc-bundle-savings {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .dfc-bundle-savings__value {
+    font-size: 13px;
+  }
+
+  .dfc-bundle-regular-total {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 10px;
+  }
+
+  .dfc-bundle-regular-total__value {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .dfc-bundle-add {
+    width: 100%;
+    min-width: 0;
+    margin-top: 0;
+  }
+
+  .dfc-bundle-item__delivery {
+    margin-top: 8px;
+    padding: 7px 9px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .dfc-bundle-item__delivery::before {
+    margin-bottom: 3px;
+    font-size: 9px;
+  }
+
+  .dfc-bundle-delivery {
+    gap: 7px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    padding: 12px 13px;
+    border-radius: 14px;
+  }
+
+  .dfc-bundle-delivery__time,
+  .dfc-bundle-delivery__shipping {
+    padding-left: 24px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .dfc-bundle-delivery__time::before,
+  .dfc-bundle-delivery__shipping::before {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+}
+
+
+
+/* =========================================
+   DFC BUNDLE – checkboxy wyboru produktów
+   ========================================= */
+
+.dfc-bundle-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.dfc-bundle-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e6ddd1;
+  color: #7f7366;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(35, 35, 35, 0.04);
+}
+
+.dfc-bundle-count strong {
+  color: #232323;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.dfc-bundle-item {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.dfc-bundle-item__check {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* ===== checkbox – zgodny z TPL ===== */
+
+.dfc-bundle-item__checkbox-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+}
+
+/* chowamy natywny checkbox całkowicie */
+.dfc-bundle-item__checkbox {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+}
+
+/* rysowany custom box */
+.dfc-bundle-item__checkbox-ui {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #d9cebf;
+  box-shadow:
+    0 2px 8px rgba(35, 35, 35, 0.05),
+    0 1px 0 rgba(255,255,255,0.8) inset;
+  transition: all 0.22s ease;
+}
+
+.dfc-bundle-item__checkbox-ui::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 7px;
+  height: 12px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg) scale(0.7);
+  opacity: 0;
+  transition: all 0.18s ease;
+}
+
+/* checked */
+.dfc-bundle-item__checkbox:checked + .dfc-bundle-item__checkbox-ui {
+  background: #232323;
+  border-color: #232323;
+  box-shadow:
+    0 6px 14px rgba(35, 35, 35, 0.16),
+    0 1px 0 rgba(255,255,255,0.12) inset;
+}
+
+.dfc-bundle-item__checkbox:checked + .dfc-bundle-item__checkbox-ui::after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+
+/* hover */
+.dfc-bundle-item__checkbox-label:hover .dfc-bundle-item__checkbox-ui {
+  border-color: #bfa784;
+  transform: translateY(-1px);
+}
+
+/* focus */
+.dfc-bundle-item__checkbox:focus + .dfc-bundle-item__checkbox-ui {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(191, 167, 132, 0.18),
+    0 2px 8px rgba(35, 35, 35, 0.05);
+}
+
+/* stan odznaczonego produktu */
+.dfc-bundle-item.is-unchecked {
+  opacity: 0.48;
+}
+
+.dfc-bundle-item.is-unchecked .dfc-bundle-item__image {
+  background: #f3efe9;
+  border-color: #e7dfd4;
+  box-shadow: none;
+}
+
+.dfc-bundle-item.is-unchecked .dfc-bundle-item__image img {
+  filter: grayscale(1);
+}
+
+.dfc-bundle-item.is-unchecked .dfc-bundle-item__label,
+.dfc-bundle-item.is-unchecked .dfc-bundle-item__price-current,
+.dfc-bundle-item.is-unchecked .dfc-bundle-item__price-regular {
+  color: #a79c90 !important;
+}
+
+.dfc-bundle-item.is-unchecked .dfc-bundle-item__discount {
+  opacity: 0.55;
+}
+
+.dfc-bundle-item.is-unchecked:hover {
+  transform: none;
+}
+
+.dfc-bundle-item.is-unchecked:not(:last-child)::after {
+  opacity: 0.35;
+}
+
+/* przycisk disabled gdy nic nie zaznaczone */
+.dfc-bundle-add[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(0.08);
+}
+
+.dfc-bundle-add.is-loading .df-btn__label {
+  opacity: 0.7;
+}
+
+/* summary rows pod JS */
+.dfc-bundle-regular-total,
+.dfc-bundle-total,
+.dfc-bundle-savings {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* =========================================
+   RESPONSIVE – checkboxy bundle
+   ========================================= */
+
+@media (max-width: 767.98px) {
+  .dfc-bundle-topbar {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .dfc-bundle-count {
+    min-height: 32px;
+    padding: 6px 11px;
+    font-size: 11px;
+  }
+
+  .dfc-bundle-item__check {
+    margin-bottom: 8px;
+  }
+
+  .dfc-bundle-item__checkbox-ui {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    border-radius: 7px;
+  }
+
+  .dfc-bundle-item__checkbox-ui::after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 11px;
+  }
+}
+
+
+
+
+/* =========================================
+   DFC BUNDLE – NOWY LAYOUT (DESKTOP)
+   ========================================= */
+
+.dfc-bundle-section {
+  margin-top: 32px;
+}
+
+.dfc-bundle-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 30px;
+  align-items: center;
+}
+
+/* LEFT – produkty */
+.dfc-bundle-products {
+  min-width: 0;
+}
+
+/* WYŁĄCZAMY stary scroll vibe */
+.dfc-bundle-items {
+  flex-wrap: wrap;
+  overflow: visible;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+/* produkty jako grid */
+.dfc-bundle-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+}
+
+/* PLUSIKI OUT (bo psują layout gridowy) */
+.dfc-bundle-item:not(:last-child)::after {
+  display: none;
+}
+
+/* RIGHT – summary */
+.dfc-bundle-summary-wrap {
+  position: sticky;
+  top: 120px;
+}
+
+/* summary card bardziej "panel" */
+.dfc-bundle-footer {
+  border-top: 0;
+  padding-top: 0;
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid #e8e2d9;
+}
+
+/* =========================================
+   RESPONSIVE – TABLET / MOBILE
+   ========================================= */
+
+@media (max-width: 991px) {
+
+  .dfc-bundle-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .dfc-bundle-summary-wrap {
+    position: static;
+  }
+
+  .dfc-bundle-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dfc-featured-countdown-wrap {
+    margin-top: 12px;
+  }
+
+  .dfc-featured-countdown,
+  .dfc-featured-countdown-inner {
+    min-height: 161px;
+  }
+
+  .dfc-featured-countdown-inner {
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dfc-bundle-items {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* =========================================
+   DFC BUNDLE – overlay aranżacji
+   ========================================= */
+
+.dfc-bundle-arrangement {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.dfc-bundle-arrangement-btn {
+    gap: 10px;
+    min-width: 280px;
+    min-height: 48px;
+    letter-spacing: .04em;
+    text-decoration: none;
+}
+
+.button-transition.dfc-bundle-arrangement-btn:hover {
+  border-color: #bfa784;
+  box-shadow: 0 12px 26px rgba(35, 35, 35, 0.10);
+  text-decoration: none;
+  color: #d7b076 !important;
+}
+
+.dfc-bundle-arrangement-btn:focus {
+  outline: none;
+}
+
+.dfc-bundle-arrangement-btn:focus-visible {
+  outline: 2px solid #232323;
+  outline-offset: 3px;
+}
+
+.dfc-bundle-arrangement-btn::before {
+  background: linear-gradient(180deg, #f6f1ea 0%, #ebe2d7 100%);
+}
+
+.dfc-bundle-arrangement-btn.button-transition::before {
+  background-color: #232323;
+  border-radius: 20px;
+}
+
+/* OVERLAY */
+.dfc-arrangement-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    visibility 0.28s ease;
+}
+
+.dfc-arrangement-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* BACKDROP */
+.dfc-arrangement-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(24, 24, 24, 0.42);
+  backdrop-filter: blur(4px);
+}
+
+/* PANEL */
+.dfc-arrangement-overlay__panel {
+  position: relative;
+  z-index: 2;
+
+  width: min(1120px, calc(100vw - 64px));
+  max-width: 1120px;
+  max-height: calc(100vh - 64px);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.18),
+    0 0 0 1px rgba(0,0,0,0.04);
+
+  transform: translateY(24px) scale(0.98);
+  opacity: 0.98;
+  transition:
+    transform 0.34s cubic-bezier(.22,.8,.24,1),
+    opacity 0.28s ease;
+}
+
+.dfc-arrangement-overlay.is-active .dfc-arrangement-overlay__panel {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* CLOSE */
+.dfc-arrangement-overlay__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  border: 1px solid #ddd2c4;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.96);
+  color: #232323;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  line-height: 1;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.dfc-arrangement-overlay__close:hover {
+  transform: rotate(90deg);
+  border-color: #bfa784;
+  box-shadow: 0 8px 18px rgba(35,35,35,0.08);
+}
+
+.dfc-arrangement-overlay__close:focus {
+  outline: none;
+}
+
+.dfc-arrangement-overlay__close:focus-visible {
+  outline: 2px solid #232323;
+  outline-offset: 3px;
+}
+
+/* BODY */
+.dfc-arrangement-overlay__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+  overflow: auto;
+  max-height: calc(100vh - 64px);
+
+  background: #f8f5f1;
+}
+
+/* IMG */
+.dfc-arrangement-overlay__image {
+  display: block;
+  width: auto;
+  height: auto;
+
+  max-width: 1000px;
+  width: 100%;
+  max-height: calc(100vh - 120px);
+
+  margin: 0 auto;
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgba(35,35,35,0.08);
+  object-fit: contain;
+}
+
+/* blokada scrolla body po otwarciu */
+body.dfc-arrangement-open {
+  overflow: hidden;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 991px) {
+  .dfc-bundle-arrangement {
+    margin-top: 12px;
+  }
+
+  .dfc-bundle-arrangement-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dfc-arrangement-overlay {
+    padding: 20px;
+  }
+
+  .dfc-arrangement-overlay__panel {
+    width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
+    border-radius: 20px;
+  }
+
+  .dfc-arrangement-overlay__body {
+    padding: 20px;
+    max-height: calc(100vh - 40px);
+  }
+
+  .dfc-arrangement-overlay__image {
+    max-width: 100%;
+    max-height: calc(100vh - 100px);
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dfc-arrangement-overlay {
+    padding: 12px;
+    align-items: center;
+  }
+
+  .dfc-arrangement-overlay__panel {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+    border-radius: 18px;
+  }
+
+  .dfc-arrangement-overlay__close {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 20px;
+  }
+
+  .dfc-arrangement-overlay__body {
+    padding: 12px;
+    max-height: calc(100vh - 24px);
+  }
+
+  .dfc-arrangement-overlay__image {
+    max-height: calc(100vh - 70px);
+    border-radius: 14px;
+  }
+
+  .dfc-featured-countdown-wrap {
+        margin-top: 10px;
+        padding: 0 5px;
+  }
+
+  .dfc-featured-countdown,
+  .dfc-featured-countdown-inner {
+        min-height: 159px;
+  }
+
+  .dfc-featured-countdown-inner {
+        padding: 11px 12px;
+        border-radius: 12px;
+  }	
+}
+
+
+/* ===============================
+   DFC – NAJNIŻSZA CENA (CENY OD)
+   =============================== */
+
+.dfc-lowest-price {
+  margin: 16px 0 0;
+  padding: 16px 18px 15px;
+  border-radius: 16px;
+  border: 1px solid #e9e4de;
+  background: linear-gradient(180deg, #fffdfb 0%, #ffffff 100%);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+/* mocniejszy akcent po lewej */
+.dfc-lowest-price::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 5px;
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(180deg, #d93a3a 0%, #b91c1c 100%);
+}
+
+/* delikatne rozświetlenie w tle */
+.dfc-lowest-price::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 58, 58, 0.08) 0%, rgba(217, 58, 58, 0) 72%);
+  pointer-events: none;
+}
+
+/* ===== TOP ===== */
+
+.dfc-lowest-price__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.dfc-lowest-price__label {
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #8a8178;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* PROMOCJA badge */
+.dfc-lowest-price__promo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d93a3a 0%, #be2020 100%);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 16px rgba(217, 58, 58, 0.22);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ===== MAIN PRICE ===== */
+
+.dfc-lowest-price__main {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+/* główna cena */
+.dfc-lowest-price__value {
+  font-size: 34px;
+  line-height: 0.95;
+  font-weight: 800;
+  color: #171717;
+  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+/* cena przed promocją */
+.dfc-lowest-price__regular {
+  font-size: 17px;
+  line-height: 1.1;
+  color: #9a928a;
+  text-decoration: line-through;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-bottom: 3px;
+}
+
+/* ===== DISCOUNT ===== */
+
+.dfc-lowest-price__bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.dfc-lowest-price__discount {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #d93a3a 0%, #b91c1c 100%);
+  box-shadow:
+    0 6px 14px rgba(217, 58, 58, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.dfc-lowest-price__discount::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.35) 0%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+/* ===== FREE SHIPPING ===== */
+
+.dfc-lowest-price__shipping {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+  margin-top: 2px;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f8f5f1 0%, #f3eee8 100%);
+  border: 1px solid #e6ddd4;
+}
+
+.dfc-lowest-price__shipping-label {
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: #6f665e;
+  flex: 1 1 auto;
+}
+
+.dfc-lowest-price__shipping-value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #ddd2c7;
+  color: #171717;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.dfc-lowest-price__shipping-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: #6f665e;
+}
+
+.dfc-lowest-price__shipping-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: #232323;
+}
+
+/* ===============================
+   HOVER
+   =============================== */
+
+.dfc-lowest-price:hover {
+  transform: translateY(-2px);
+  border-color: #e0d7ce;
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* ===============================
+   DOPASOWANIE POD .dfc-right
+   =============================== */
+
+.dfc-right .dfc-lowest-price {
+  width: 100%;
+  max-width: 100%;
+}
+
+.dfc-right .dfc-featured + .dfc-lowest-price {
+  margin-top: 16px;
+}
+
+/* ===============================
+   TABLET
+   =============================== */
+
+@media (max-width: 991px) {
+  .dfc-lowest-price {
+    margin: 14px 0 0;
+    padding: 15px 16px 14px;
+    gap: 9px;
+  }
+
+  .dfc-lowest-price__value {
+    font-size: 30px;
+  }
+
+  .dfc-lowest-price__regular {
+    font-size: 15px;
+  }
+
+  .dfc-lowest-price__shipping {
+    padding: 10px 12px;
+  }
+
+  .dfc-lowest-price__shipping-label {
+    font-size: 11px;
+  }
+
+  .dfc-lowest-price__shipping-value {
+    font-size: 12px;
+  }
+}
+
+/* ===============================
+   MOBILE
+   =============================== */
+
+@media (max-width: 767px) {
+  .dfc-lowest-price {
+    margin: 12px 0 0;
+    padding: 14px 14px 13px;
+    border-radius: 14px;
+    gap: 8px;
+  }
+
+  .dfc-lowest-price::before {
+    top: 8px;
+    bottom: 8px;
+    width: 4px;
+  }
+
+  .dfc-lowest-price__top {
+    gap: 8px;
+  }
+
+  .dfc-lowest-price__label {
+    font-size: 10px;
+  }
+
+  .dfc-lowest-price__promo {
+    min-height: 22px;
+    padding: 4px 9px;
+    font-size: 9px;
+  }
+
+  .dfc-lowest-price__main {
+    gap: 8px;
+  }
+
+  .dfc-lowest-price__value {
+    font-size: 28px;
+  }
+
+  .dfc-lowest-price__regular {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .dfc-lowest-price__discount {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .dfc-lowest-price__shipping-label {
+    font-size: 11px;
+  }
+
+  .dfc-lowest-price__shipping-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dfc-lowest-price__shipping-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .dfc-lowest-price__shipping-value {
+    font-size: 12px;
+    padding: 5px 9px;
+  }
+}
+
+/* ===============================
+   BARDZO MAŁE EKRANY
+   =============================== */
+
+@media (max-width: 479px) {
+  .dfc-lowest-price__value {
+    font-size: 25px;
+  }
+
+  .dfc-lowest-price__regular {
+    font-size: 13px;
+  }
+
+  .dfc-lowest-price__shipping-label {
+    font-size: 10px;
+  }
+
+  .dfc-lowest-price__shipping-value {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   DF COLLECTION – STICKY BAR
+   spójny z .dfc-overlay-nav / .dfc-nav / .dfc-collection-counter
+   ========================================= */
+
+.dfc-sticky-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%) translateY(18px);
+    width: min(calc(100vw - 32px), 1720px);
+    z-index: 120;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+}
+
+.dfc-sticky-bar.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dfc-sticky-bar__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+    min-height: 68px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    background: #f8f5f1;
+    border: 1px solid rgba(35, 35, 35, 0.08);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.10),
+        0 4px 12px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dfc-sticky-bar__left {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+.dfc-sticky-bar__tabs-wrap {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.dfc-sticky-tabs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    scroll-behavior: auto;
+    overscroll-behavior-x: contain;
+    padding: 0;
+}
+
+.dfc-sticky-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.dfc-sticky-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    appearance: none;
+    background: transparent;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    font-weight: 600;
+    color: #8c8c8c;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 999px;
+    transition:
+        color .2s ease,
+        background .2s ease;
+}
+
+.dfc-sticky-tab:hover {
+    color: #555;
+    background: transparent;
+}
+
+.dfc-sticky-tab.active,
+.dfc-sticky-tab[aria-selected="true"] {
+    color: #000;
+    font-weight: 600;
+    background: rgba(35, 35, 35, 0.06);
+}
+
+.dfc-sticky-tab:focus {
+    outline: none;
+}
+
+/* =========================================
+   STICKY BAR – custom scrollbar pod tabsami
+   ========================================= */
+
+.dfc-sticky-tabs-scrollbar {
+    display: none;
+    padding: 0 2px;
+}
+
+.dfc-sticky-tabs-scrollbar.is-visible {
+    display: block;
+}
+
+.dfc-sticky-tabs-scrollbar-track {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(35, 35, 35, 0.10);
+    overflow: hidden;
+}
+
+.dfc-sticky-tabs-scrollbar-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    border-radius: 999px;
+    background: #232323;
+    transform: translateX(0);
+    transition:
+        transform .18s ease,
+        width .18s ease,
+        opacity .18s ease;
+    opacity: 0.9;
+}
+
+.dfc-sticky-tabs-scrollbar-track:hover .dfc-sticky-tabs-scrollbar-thumb {
+    opacity: 1;
+}
+
+/* =========================================
+   PRAWA CZĘŚĆ – licznik + strzałki
+   ========================================= */
+
+.dfc-sticky-bar__nav {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: max-content;
+}
+
+.dfc-sticky-bar__counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 74px;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .92);
+    color: #232323;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+    border: 1px solid #e7ded2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+.dfc-sticky-bar__current,
+.dfc-sticky-bar__total {
+    display: inline-block;
+    min-width: 1ch;
+    text-align: center;
+}
+
+.dfc-sticky-bar__separator {
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 999px;
+    opacity: 0.85;
+    display: inline-block;
+}
+
+.dfc-sticky-bar__arrows {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dfc-sticky-bar__arrow,
+.dfc-sticky-prev,
+.dfc-sticky-next {
+    background: rgba(255, 255, 255, .92);
+    color: #000;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 999px;
+    border: 1px solid #e7ded2;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.dfc-sticky-bar__arrow:hover,
+.dfc-sticky-prev:hover,
+.dfc-sticky-next:hover {
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+.dfc-sticky-bar__arrow:focus,
+.dfc-sticky-prev:focus,
+.dfc-sticky-next:focus {
+    outline: none;
+}
+
+.dfc-sticky-bar__arrow svg,
+.dfc-sticky-prev svg,
+.dfc-sticky-next svg {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+.dfc-sticky-bar__arrow svg path,
+.dfc-sticky-prev svg path,
+.dfc-sticky-next svg path {
+    stroke: #232323;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 991px) {
+    .dfc-sticky-bar {
+        width: calc(100vw - 20px);
+        bottom: 12px;
+    }
+
+    .dfc-sticky-bar__inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+        min-height: 60px;
+        padding: 10px 12px;
+        gap: 12px;
+    }
+
+    .dfc-sticky-bar__left {
+        gap: 7px;
+    }
+
+    .dfc-sticky-tabs {
+        gap: 8px;
+    }
+
+    .dfc-sticky-tab {
+        font-size: 14px;
+        padding: 9px 12px;
+    }
+
+    .dfc-sticky-bar__counter {
+        min-width: 68px;
+        height: 34px;
+        padding: 0 12px;
+        font-size: 16px;
+        gap: 6px;
+    }
+
+    .dfc-sticky-bar__separator {
+        width: 14px;
+    }
+
+    .dfc-sticky-bar__arrow,
+    .dfc-sticky-prev,
+    .dfc-sticky-next {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    .dfc-sticky-bar__arrow svg,
+    .dfc-sticky-prev svg,
+    .dfc-sticky-next svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .dfc-sticky-tabs-scrollbar-track {
+        height: 5px;
+    }
+}
+
+/* =========================================
+   MOBILE
+   - dalej poziomo
+   - przewija się tylko lewa część z tabsami
+   ========================================= */
+
+@media (max-width: 767px) {
+    .dfc-sticky-bar {
+        left: 10px;
+        right: 10px;
+        width: auto;
+        bottom: 10px;
+        transform: translateX(0) translateY(18px);
+    }
+
+    .dfc-sticky-bar.is-visible {
+        transform: translateX(0) translateY(0);
+    }
+
+    .dfc-sticky-bar__inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        min-height: 56px;
+        padding: 10px;
+        border-radius: 16px;
+        gap: 10px;
+    }
+
+    .dfc-sticky-bar__left {
+        min-width: 0;
+        gap: 6px;
+    }
+
+    .dfc-sticky-tabs {
+        gap: 8px;
+    }
+
+    .dfc-sticky-tab {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    .dfc-sticky-bar__nav {
+        gap: 8px;
+        min-width: max-content;
+    }
+
+    .dfc-sticky-bar__counter {
+        min-width: 62px;
+        height: 34px;
+        padding: 0 10px;
+        font-size: 14px;
+        gap: 6px;
+    }
+
+    .dfc-sticky-bar__separator {
+        width: 12px;
+    }
+
+    .dfc-sticky-bar__arrow,
+    .dfc-sticky-prev,
+    .dfc-sticky-next {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    .dfc-sticky-bar__arrow svg,
+    .dfc-sticky-prev svg,
+    .dfc-sticky-next svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .dfc-sticky-tabs-scrollbar {
+        padding: 0;
+    }
+
+    .dfc-sticky-tabs-scrollbar-track {
+        height: 4px;
+    }
+}
+
+/* =========================================
+   BARDZO MAŁE EKRANY
+   ========================================= */
+
+@media (max-width: 480px) {
+    .dfc-sticky-bar__inner {
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .dfc-sticky-tab {
+        font-size: 12px;
+        padding: 8px 9px;
+    }
+
+    .dfc-sticky-bar__counter {
+        min-width: 58px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+
+    .dfc-sticky-bar__arrow,
+    .dfc-sticky-prev,
+    .dfc-sticky-next {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .dfc-sticky-bar__arrow svg,
+    .dfc-sticky-prev svg,
+    .dfc-sticky-next svg {
+        width: 32px;
+        height: 32px;
+    }
+	.dfc-featured-countdown,
+    .dfc-featured-countdown-inner {
+        min-height: 157px;
+    }
+
+    .dfc-featured-countdown-inner {
+        padding: 10px 10px;
+    }
+}
+
+body.dfc-sticky-bar-visible #CookiebotWidget {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    transition: opacity .2s ease, visibility .2s ease !important;
+}
+#CookiebotWidget {
+    transition: opacity .2s ease, visibility .2s ease !important;
+}
+
+
+/* DFC countdown – ukryty do czasu pełnej inicjalizacji */
+.dfc-featured-countdown-wrap {
+  width: 100%;
+}
+
+.dfc-featured-countdown-wrap .dfc-featured-countdown-inner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dfc-featured-countdown-wrap.is-loading {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dfc-featured-countdown-wrap.is-ready {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dfc-featured-countdown-wrap .pspc-wrp,
+.dfc-featured-countdown-wrap .psproductcountdown,
+.dfc-featured-countdown-wrap .pspc-inactive {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
