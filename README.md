@@ -1,1349 +1,849 @@
-DF Collection – README
+<p align="right">
+  <a href="README_EN.md">🇬🇧 English</a> | <strong>🇵🇱 Polski</strong>
+</p>
 
-1. Cel modułu
+# DF Collection
 
-dfcollection to własny moduł PrestaShop odpowiedzialny za rozbudowaną sekcję kolekcji na stronie głównej. Jego zadaniem jest prezentowanie wybranych kolekcji mebli w formie dużego, interaktywnego bloku z:
+Zaawansowany moduł PrestaShop do tworzenia interaktywnych sekcji kolekcji produktowych na stronie głównej sklepu.
 
-zakładkami kolekcji,
+![PrestaShop](https://img.shields.io/badge/PrestaShop-8.1.7-DF0067?logo=prestashop&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black)
+![Smarty](https://img.shields.io/badge/Smarty-Templates-F0C040)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white)
+![AJAX](https://img.shields.io/badge/AJAX-Dynamic%20UI-005571)
+![Status](https://img.shields.io/badge/status-production-success)
 
-sticky barem kolekcji pojawiającym się podczas scrolla,
+## O projekcie
 
-dużym zdjęciem kolekcji,
+**DF Collection** to autorski moduł PrestaShop, który przekształca standardową prezentację kategorii w rozbudowaną sekcję sprzedażową na stronie głównej sklepu.
 
-opcjonalnym trybem compare dla zdjęcia,
+Każda kolekcja może posiadać własne zdjęcia, opis, cechy, produkt polecany, slider produktów, countdown, porównanie obrazów oraz zestaw produktów „Najczęściej kupowane razem”.
 
-opcjonalnym zdjęciem aranżacji w overlayu,
+Przełączanie kolekcji odbywa się asynchronicznie. Moduł aktualizuje zawartość sekcji bez pełnego przeładowania strony, zachowując przy tym obsługę sliderów, countdownów, cen, dostawy, bundle oraz interaktywnych elementów interfejsu.
 
-krótkim opisem kolekcji,
+Moduł został zaprojektowany jako centralny blok wizualny i sprzedażowy na homepage sklepu meblowego.
 
-badge / cechami kolekcji,
+## Status produkcyjny
 
-zakresem kolekcji,
+Moduł działa w środowisku produkcyjnym sklepu opartego na:
 
-polecanym produktem,
+- PrestaShop 8.1.7,
+- PHP 8,
+- Smarty,
+- MySQL,
+- JavaScript i AJAX,
+- Slick Slider,
+- Select2,
+- Sortable.
 
-opcjonalnym countdownem opartym o produkt polecany,
+Projekt obsługuje wiele aktywnych kolekcji oraz rozbudowaną konfigurację z poziomu panelu administracyjnego.
 
-sliderem produktów z wybranej kategorii,
+## Najważniejsze możliwości
 
-informacją o najniższej cenie w kolekcji,
+- wiele niezależnych kolekcji produktowych,
+- powiązanie kolekcji z kategoriami PrestaShop,
+- asynchroniczne przełączanie kolekcji,
+- sticky bar nawigacyjny,
+- duże obrazy responsywne,
+- osobne obrazy desktop, mobile i small,
+- interaktywny tryb porównania dwóch obrazów,
+- overlay ze zdjęciem aranżacji,
+- produkt polecany,
+- opcjonalny countdown produktu polecanego,
+- slider produktów z wybranej kategorii,
+- konfigurowalne sortowanie produktów,
+- informacja o najniższej cenie kolekcji,
+- informacja o progu darmowej dostawy,
+- cechy kolekcji prezentowane jako badge,
+- zakres produktowy kolekcji,
+- sekcja „Najczęściej kupowane razem”,
+- dynamiczne obliczanie ceny zestawu,
+- dodawanie wielu produktów do koszyka,
+- kopiowanie całych kolekcji,
+- fizyczne duplikowanie plików obrazów,
+- sortowanie kolekcji metodą drag-and-drop,
+- własny cache HTML,
+- responsywny panel administracyjny.
 
-informacją o darmowej dostawie od,
+## Podgląd panelu administracyjnego
 
-sekcją „Najczęściej kupowane razem”,
+### Ustawienia modułu i obrazy kolekcji
 
-AJAX-owym przełączaniem kolekcji bez przeładowania strony.
+![Ustawienia modułu DF Collection](docs/images/configuration1.png)
 
-Moduł został zbudowany tak, aby działał jako mocny blok sprzedażowy i wizualny na homepage.
+Panel umożliwia ustawienie wspólnego nagłówka sekcji, linku prowadzącego do kategorii oraz kategorii wykluczonych z wyszukiwania produktów.
 
-2. Co dokładnie robi moduł na froncie
+Dla każdej kolekcji można wgrać osobne obrazy dla różnych szerokości ekranu oraz dodatkowe zdjęcia wykorzystywane przez tryb compare i overlay aranżacji.
 
-Na stronie głównej moduł renderuje sekcję kolekcji. Użytkownik może:
+### Główna konfiguracja kolekcji
 
-przełączać się między kolekcjami,
+![Główna konfiguracja kolekcji](docs/images/configuration2.png)
 
-korzystać ze sticky bara kolekcji podczas scrollowania strony,
+Każda kolekcja może zostać powiązana z kategorią i produktem polecanym. Administrator określa również limit produktów, sposób sortowania, tryb slidera oraz parametry porównania obrazów.
 
-oglądać duże zdjęcie kolekcji,
+### Opis, zakres i zestawy produktowe
 
-oglądać wersję compare zdjęcia, jeśli została ustawiona,
+![Opis i zestawy kolekcji](docs/images/configuration3.png)
 
-zobaczyć produkt polecany dla danej kolekcji,
+Formularz umożliwia dodanie krótkiego opisu, zakresu kolekcji oraz produktów tworzących zestaw „Najczęściej kupowane razem”.
 
-zobaczyć countdown produktu polecanego, jeśli został włączony,
+### Badge kolekcji
 
-przejrzeć slider produktów z tej kategorii,
+![Cechy i badge kolekcji](docs/images/configuration4.png)
 
-zobaczyć najniższą cenę w danej kolekcji,
+Każda kolekcja może otrzymać maksymalnie cztery krótkie cechy prezentowane na froncie w formie badge.
 
-zobaczyć próg darmowej dostawy dla tej kolekcji,
+### Lista kolekcji
 
-przeczytać krótki opis kolekcji,
+![Lista kolekcji](docs/images/configuration5.png)
 
-zobaczyć zakres kolekcji i badge,
+Panel administracyjny prezentuje zapisane kolekcje wraz z ich statusem, kategorią, produktem polecanym, countdownem, bundle oraz opisem.
 
-przejrzeć sekcję bundle „najczęściej kupowane razem”,
+### Zarządzanie większą liczbą kolekcji
 
-dodać zaznaczone produkty z bundle do koszyka,
+![Zarządzanie kolekcjami](docs/images/configuration6.png)
 
-otworzyć overlay aranżacji zestawu.
+Kolekcje mogą być aktywowane, edytowane, kopiowane, usuwane i sortowane metodą drag-and-drop.
 
-Najważniejsze: przełączanie kolekcji jest realizowane AJAX-em przez dedykowany front controller, więc prawa część, slider, ceny, darmowa dostawa, countdown produktu polecanego, bundle i inne dane aktualizują się dynamicznie bez pełnego reloadu strony.
+## Funkcjonalności frontowe
 
-3. Główne elementy funkcjonalne modułu
+### Dynamiczne przełączanie kolekcji
 
-3.1. Kolekcje
+Zmiana aktywnej kolekcji nie powoduje pełnego przeładowania strony.
 
-Każdy rekord kolekcji opisuje jedną sekcję powiązaną z jedną kategorią PrestaShop.
+Dedykowany kontroler AJAX pobiera i zwraca między innymi:
 
-Dla każdej kolekcji można ustawić między innymi:
+- główny blok kolekcji,
+- obrazy,
+- produkt polecany,
+- slider produktów,
+- countdown,
+- dane cenowe,
+- dane darmowej dostawy,
+- badge,
+- zakres kolekcji,
+- krótki opis,
+- produkty bundle,
+- podsumowanie zestawu.
 
-aktywność,
+Odpowiedzi AJAX mogą być przechowywane w pamięci po stronie klienta, dzięki czemu ponowne otwarcie wcześniej załadowanej kolekcji jest szybsze.
 
-kategorię,
+### Sticky bar kolekcji
 
-produkt polecany,
-
-włączenie countdownu z produktu polecanego,
-
-tytuł własny,
-
-obraz desktop,
-
-obraz mobile,
-
-obraz small / xs,
-
-drugie zdjęcie compare,
-
-zdjęcie aranżacji,
-
-pozycję startową compare,
-
-etykietę compare,
-
-limit produktów w sliderze,
-
-tryb slidera (zapętlony lub nie),
-
-sortowanie slidera,
-
-krótki opis,
-
-zakres kolekcji,
-
-4 badge,
-
-bundle produktów.
-
-3.1.1. Sticky bar kolekcji
-
-Moduł posiada dodatkowy sticky bar widoczny podczas scrollowania strony.
+Podczas przewijania strony moduł wyświetla dodatkowy pasek nawigacyjny.
 
 Sticky bar:
 
-pojawia się dopiero po przewinięciu ponad główne taby kolekcji,
+- pojawia się po przewinięciu głównych zakładek,
+- znika przed końcem sekcji modułu,
+- wyświetla nazwy dostępnych kolekcji,
+- posiada licznik aktywnej pozycji,
+- obsługuje nawigację poprzednia/następna,
+- pozostaje zsynchronizowany z głównymi zakładkami,
+- obsługuje poziome przewijanie na mniejszych ekranach,
+- posiada własny scrollbar,
+- nie nachodzi na kolejne sekcje strony.
 
-znika przed końcem sekcji modułu, tak aby nie nachodził na dalszą zawartość strony,
+### Responsywne obrazy kolekcji
 
-zawiera poziomą listę nazw kolekcji,
+Administrator może przypisać osobne obrazy dla:
 
-zawiera licznik aktualnej kolekcji,
+- desktopu,
+- urządzeń mobilnych,
+- najmniejszych ekranów.
 
-zawiera strzałki poprzednia / następna kolekcja,
+Pozwala to kontrolować sposób kadrowania i prezentacji kolekcji niezależnie dla każdej szerokości ekranu.
 
-umożliwia przełączanie kolekcji tak samo jak główne taby,
+### Tryb porównania obrazów
 
-jest zsynchronizowany z aktywną kolekcją, licznikiem i stanem AJAX,
+Kolekcja może posiadać dodatkowe zdjęcie porównawcze.
 
-na mniejszych szerokościach przewija się poziomo i pokazuje własny custom scrollbar,
+Po jego skonfigurowaniu użytkownik otrzymuje interaktywny suwak umożliwiający porównanie dwóch obrazów.
 
-po pojawieniu się ukrywa widget Cookiebot, aby nie zasłaniał nazw kolekcji.
+Administrator może ustawić:
 
-3.2. Produkt polecany
+- drugie zdjęcie,
+- początkową pozycję suwaka,
+- tekst etykiety pomocniczej.
 
-Każda kolekcja może mieć przypisany jeden produkt polecany. Jest on wyświetlany w prawej części bloku jako główny bestseller / feature product.
+### Produkt polecany
 
-Jeżeli produkt polecany jest ustawiony, moduł:
+Każda kolekcja może mieć przypisany główny produkt polecany.
 
-renderuje jego kartę na froncie,
+Produkt polecany:
 
-buduje link do produktu,
+- jest prezentowany jako wyróżniona karta,
+- posiada link do strony produktu,
+- jest wykluczany ze standardowego slidera tej samej kolekcji,
+- może być źródłem danych dla countdownu,
+- posiada dynamiczny podgląd w panelu administracyjnym.
 
-pobiera miniaturę do admina,
+### Countdown produktu polecanego
 
-wyklucza go ze slidera produktów tej samej kolekcji.
+Countdown jest bezpośrednio powiązany z aktualnym produktem polecanym.
 
-3.2.1. Countdown z produktu polecanego
+Nie posiada osobnego wyboru produktu, dzięki czemu konfiguracja pozostaje spójna i jednoznaczna.
 
-Każda kolekcja może opcjonalnie wyświetlać countdown oparty o aktualnie wybrany produkt polecany.
+Po zmianie kolekcji:
 
-Działanie jest celowo proste:
+1. pobierany jest nowy HTML countdownu,
+2. zawartość zostaje podmieniona w DOM,
+3. skrypt countdownu jest inicjalizowany ponownie,
+4. moduł przechodzi przez techniczne stany `loading` i `ready`.
 
-countdown nie ma własnego osobnego wyboru produktu,
+Ogranicza to migotanie oraz skakanie interfejsu podczas inicjalizacji.
 
-countdown zawsze działa wyłącznie na podstawie id_featured_product,
+W panelu administracyjnym opcja countdownu jest niedostępna do momentu wskazania produktu polecanego.
 
-włączenie countdownu jest możliwe tylko wtedy, gdy kolekcja ma wybrany produkt polecany.
+### Slider produktów
 
-Na froncie countdown:
+Produkty slidera są pobierane z kategorii przypisanej do kolekcji.
 
-wyświetla się pod lewą częścią kolekcji,
+Dostępne sposoby sortowania:
 
-jest renderowany przez hook modułu countdown dla ID produktu polecanego,
+- pozycja w kategorii,
+- kolejność losowa,
+- najnowsze produkty,
+- cena rosnąco,
+- cena malejąco,
+- bestsellery.
 
-aktualizuje się dynamicznie po przełączeniu kolekcji AJAX-em,
+Administrator może również określić:
 
-jest ponownie inicjalizowany po podmianie DOM,
+- limit od 1 do 20 produktów,
+- tryb standardowy,
+- tryb zapętlony.
 
-przy pierwszym renderze i po AJAX-ie przechodzi przez stan techniczny loading / ready, aby ograniczyć skakanie i błyski podczas inicjalizacji.
+Produkt polecany jest automatycznie pomijany w sliderze.
 
-W adminie:
+### Najniższa cena w kolekcji
 
-toggle countdownu jest zablokowany, dopóki nie zostanie wybrany produkt polecany,
+Moduł analizuje aktywne produkty przypisane do kategorii kolekcji i wyznacza najniższą cenę.
 
-po wybraniu produktu polecanego toggle odblokowuje się natychmiast, bez potrzeby wcześniejszego zapisu kolekcji,
+Obsługiwane są:
 
-preview produktu polecanego pokazuje także tekstowy stan countdownu: włączony / wyłączony.
+- aktualna najniższa cena,
+- cena regularna,
+- aktywna promocja,
+- wartość lub etykieta rabatu.
 
-3.3. Slider produktów
+Dane aktualizują się automatycznie po zmianie kolekcji.
 
-Slider pokazuje produkty z kategorii przypisanej do kolekcji.
+### Darmowa dostawa
 
-Obsługiwane tryby sortowania:
+Moduł może pobierać próg darmowej dostawy dla aktualnej kolekcji z zewnętrznego modułu dostaw.
 
-position – pozycja w kategorii,
+Wartość jest liczona osobno dla każdej kategorii i aktualizowana razem z pozostałymi danymi AJAX.
 
-random – losowo,
+### Krótki opis i zakres kolekcji
 
-newest – najnowsze,
+Kolekcja może posiadać:
 
-price_asc – od najtańszych,
+- krótki opis prezentowany pod głównym obrazem,
+- możliwość rozwinięcia dłuższej treści,
+- uporządkowaną listę typów produktów znajdujących się w kolekcji.
 
-price_desc – od najdroższych,
+### Badge kolekcji
 
-bestseller – bestsellery.
+Administrator może dodać cztery krótkie cechy kolekcji.
 
-Dodatkowo można ustawić:
+Przykładowe zastosowania:
 
-limit produktów od 1 do 20,
+- dostępne kolory,
+- styl nowoczesny,
+- do salonu i jadalni,
+- produkt dostępny od ręki.
 
-tryb infinite / zapętlony.
+Badge umożliwiają szybkie przedstawienie najważniejszych właściwości oferty.
 
-3.4. Compare image
+### Zdjęcie aranżacji
 
-Jeżeli ustawione jest image_compare_url, lewa część bloku przechodzi w tryb compare:
+Dla kolekcji można dodać osobne zdjęcie aranżacji.
 
-wyświetlane są dwa obrazy,
+Po kliknięciu przycisku użytkownik otrzymuje pełnoekranowy overlay prezentujący produkty jako gotowy zestaw we wnętrzu.
 
-użytkownik może przesuwać suwak compare,
+### Najczęściej kupowane razem
 
-można ustawić pozycję startową suwaka,
+Każda kolekcja może posiadać własny zestaw produktów.
 
-można ustawić etykietę compare.
+Dla każdego elementu administrator określa:
 
-3.5. Zdjęcie aranżacji
+- produkt,
+- opcjonalną własną etykietę,
+- aktywność,
+- pozycję.
 
-Jeżeli ustawione jest arrangement_image_url, w sekcji bundle pojawia się przycisk typu:
+Na froncie użytkownik może:
 
-„Zobacz zestaw w aranżacji”
+- zaznaczać i odznaczać produkty,
+- sprawdzać cenę łączną,
+- sprawdzać cenę regularną,
+- zobaczyć wyliczoną oszczędność,
+- sprawdzać informację o dostawie,
+- dodać wybrane produkty do koszyka jednym przyciskiem.
 
-Po kliknięciu otwierany jest overlay ze zdjęciem aranżacji.
+## Panel administracyjny
 
-3.6. Najniższa cena w kolekcji
+Panel modułu został zbudowany jako dedykowany interfejs, niezależny od standardowych formularzy PrestaShop.
 
-Moduł oblicza najniższą cenę spośród aktywnych produktów w kategorii przypisanej do kolekcji.
+Obejmuje:
 
-Pokazuje:
+### Ustawienia wspólne
 
-najniższą cenę,
+- nagłówek sekcji,
+- link nagłówka,
+- wykluczone kategorie produktów.
 
-cenę regularną, jeśli jest promocja,
+### Ustawienia kolekcji
 
-label zniżki,
+- status aktywności,
+- kategoria,
+- produkt polecany,
+- countdown produktu polecanego,
+- własny tytuł,
+- limit slidera,
+- sortowanie produktów,
+- tryb infinite,
+- parametry compare,
+- krótki opis,
+- zakres kolekcji,
+- cztery badge,
+- produkty bundle.
 
-flagę promocji.
+### Obrazy
 
-3.7. Darmowa dostawa od
+- obraz desktop,
+- obraz mobile,
+- obraz small,
+- drugie zdjęcie compare,
+- zdjęcie aranżacji.
 
-Moduł pobiera próg darmowej dostawy dla danej kolekcji przez analizę modułu freelivery.
+### Zarządzanie rekordami
 
-Dane są liczone per aktualna kategoria kolekcji i aktualizują się przy przełączaniu kolekcji AJAX-em.
+- tworzenie,
+- edycja,
+- kopiowanie,
+- usuwanie,
+- aktywacja i dezaktywacja,
+- sortowanie drag-and-drop.
 
-3.8. Bundle – najczęściej kupowane razem
+## Kopiowanie kolekcji
 
-Każda kolekcja może mieć własną listę produktów bundle.
+Moduł umożliwia utworzenie kompletnej kopii istniejącej kolekcji.
 
-Dla każdego elementu bundle można ustawić:
+Podczas kopiowania:
 
-produkt,
+- tworzony jest nowy rekord,
+- kopia trafia na koniec listy,
+- otrzymuje dopisek informujący o skopiowaniu,
+- domyślnie pozostaje nieaktywna,
+- kopiowane są wszystkie ustawienia,
+- kopiowane są elementy bundle,
+- lokalne obrazy są fizycznie duplikowane.
 
-custom label widoczny na froncie,
+Moduł nie zapisuje jedynie tych samych adresów URL.
 
-aktywność,
+Dla każdego lokalnego obrazu wykonywane jest rzeczywiste kopiowanie pliku, dzięki czemu oryginał i kopia pozostają od siebie niezależne.
 
-pozycję.
+Usunięcie lub zmiana obrazu w kopii nie wpływa na oryginalną kolekcję.
 
-Na froncie bundle:
+## Zarządzanie obrazami
 
-pokazuje produkty w zestawie,
+Moduł obsługuje pliki:
 
-przelicza cenę łączną,
+- JPG,
+- PNG.
 
-pokazuje cenę regularną,
+Podczas uploadu:
 
-pokazuje oszczędność,
+1. sprawdzana jest poprawność przesłanego pliku,
+2. weryfikowany jest jego rozmiar,
+3. sprawdzany jest typ MIME,
+4. generowana jest unikalna nazwa,
+5. plik zapisywany jest w katalogu modułu,
+6. nowy adres URL trafia do bazy danych.
 
-pokazuje dostawę,
+Pliki są przechowywane w:
 
-pozwala odznaczać produkty,
+```text
+/modules/dfcollection/img/
+```
 
-pozwala dodać zaznaczone produkty do koszyka.
+Podczas usuwania kolekcji moduł usuwa również należące do niej lokalne obrazy.
 
-4. Architektura modułu
+## Architektura
 
-Najważniejsze elementy modułu to:
+```mermaid
+flowchart TD
+    BO[Panel administracyjny] --> MOD[dfcollection.php]
+    BO --> ADMIN[config.tpl + admin JavaScript]
 
-4.1. Główny plik modułu
+    MOD --> DB1[(ps_dfcollection)]
+    MOD --> DB2[(ps_dfcollection_bundle_item)]
+    MOD --> IMG[/modules/dfcollection/img/]
+    MOD --> CACHE[/var/cache/prod/dfcollection/]
 
-dfcollection.php
+    HOME[Hook displayHome] --> MOD
+    MOD --> DATA[buildFrontData]
+    DATA --> TPL[dfcollection.tpl]
+    TPL --> MAIN[partials/main.tpl]
+    TPL --> SLIDER[partials/slider.tpl]
 
-To centralna logika modułu. Zawiera:
+    USER[Użytkownik] --> JS[dfcollection.js]
+    JS --> SWITCH[AJAX switch controller]
+    JS --> CART[AJAX bundlecart controller]
 
-instalację,
+    SWITCH --> DATA
+    CART --> PRESTA[PrestaShop Cart]
 
-tworzenie i migracje tabel,
+    DATA --> PRODUCTS[Produkty i kategorie]
+    DATA --> DELIVERY[Moduły i dane dostawy]
+    DATA --> COUNTDOWN[Zewnętrzny moduł countdown]
+```
 
-hooki,
+## Przepływ przełączania kolekcji
 
-render sekcji na homepage,
+```mermaid
+sequenceDiagram
+    participant U as Użytkownik
+    participant JS as dfcollection.js
+    participant C as switch.php
+    participant M as dfcollection.php
+    participant DB as Baza danych
+    participant DOM as Interfejs
 
-logikę zapisu kolekcji w BO,
+    U->>JS: Wybór kolekcji
+    JS->>JS: Sprawdzenie cache odpowiedzi
 
-logikę kopiowania kolekcji,
+    alt Dane znajdują się w cache
+        JS->>DOM: Aktualizacja sekcji
+    else Brak danych w cache
+        JS->>C: Żądanie AJAX
+        C->>M: buildFrontData()
+        M->>DB: Pobranie kolekcji i produktów
+        DB-->>M: Dane
+        M-->>C: HTML i dane kolekcji
+        C-->>JS: Odpowiedź JSON
+        JS->>JS: Zapis odpowiedzi w cache
+        JS->>DOM: Podmiana zawartości
+    end
 
-logikę usuwania,
+    JS->>DOM: Inicjalizacja slidera
+    JS->>DOM: Inicjalizacja compare
+    JS->>DOM: Inicjalizacja countdownu
+    JS->>DOM: Aktualizacja bundle
+```
 
-upload i duplikowanie obrazów,
+## Główne komponenty
 
-bundle,
+### `dfcollection.php`
 
-cache HTML,
+Centralny plik modułu odpowiedzialny za:
 
-budowę danych dla frontu.
+- instalację,
+- strukturę bazy danych,
+- migracje,
+- rejestrację hooków,
+- render sekcji homepage,
+- konfigurację panelu administracyjnego,
+- zapis kolekcji,
+- kopiowanie i usuwanie,
+- upload obrazów,
+- obsługę bundle,
+- budowanie danych frontowych,
+- cache HTML.
 
-4.2. Front controller AJAX switch
+### `controllers/front/switch.php`
 
-controllers/front/switch.php
+Kontroler obsługujący asynchroniczną zmianę kolekcji.
 
-Odpowiada za dynamiczne przełączanie kolekcji przez AJAX.
+Zwraca dane w formacie JSON, w tym:
 
-Zwraca JSON zawierający m.in.:
+- HTML głównego bloku,
+- HTML slidera,
+- tytuł kolekcji,
+- licznik produktów,
+- dane obrazów,
+- countdown,
+- dane cenowe,
+- dane dostawy,
+- bundle.
 
-HTML lewej / głównej części,
+### `controllers/front/bundlecart.php`
 
-HTML slidera,
+Kontroler odpowiedzialny za dodawanie wybranych produktów zestawu do koszyka.
 
-tytuł,
+### `views/js/dfcollection.js`
 
-dane o liczbie produktów,
+Główna warstwa interakcji frontowej.
 
-HTML i dane powiązane z countdownem produktu polecanego,
+Odpowiada między innymi za:
 
-dane o obrazach i ustawieniach kolekcji.
+- AJAX switching,
+- cache odpowiedzi,
+- preload obrazów,
+- sticky bar,
+- nawigację strzałkami,
+- licznik kolekcji,
+- animacje przejść,
+- tryb compare,
+- inicjalizację Slick Slider,
+- lazy loading,
+- ręczne kropki slidera,
+- rozwijanie opisu,
+- overlay aranżacji,
+- obliczenia bundle,
+- dodawanie bundle do koszyka,
+- podmianę cen,
+- podmianę badge,
+- aktualizację dostawy,
+- ponowną inicjalizację countdownu,
+- synchronizację interfejsu po zmianie DOM.
 
-4.3. Front controller bundlecart
+### `views/templates/admin/config.tpl`
 
-controllers/front/bundlecart.php
+Szablon panelu administracyjnego zawierający:
 
-Odpowiada za dodawanie zaznaczonych produktów z bundle do koszyka.
+- formularz kolekcji,
+- pola uploadu,
+- podglądy produktów,
+- Select2,
+- konfigurację bundle,
+- tabelę kolekcji,
+- akcje edycji, kopiowania i usuwania.
 
-4.4. Szablony frontowe
-
-Najważniejsze tpl-e znajdują się w:
-
-views/templates/hook/dfcollection.tpl
-
-views/templates/hook/partials/main.tpl
-
-views/templates/hook/partials/slider.tpl
-
-Rola:
-
-dfcollection.tpl – główny kontener sekcji na homepage, taby kolekcji oraz sticky bar,
-
-main.tpl – główny blok aktywnej kolekcji,
-
-slider.tpl – slider produktów.
-
-4.5. JavaScript frontowy
-
-views/js/dfcollection.js
+### `views/js/dfc-admin-sort.js`
 
 Obsługuje:
 
-przełączanie kolekcji,
+- sortowanie drag-and-drop,
+- wysyłkę nowych pozycji przez AJAX,
+- inicjalizację funkcji pomocniczych panelu.
 
-preload obrazów,
+## Struktura modułu
 
-cache odpowiedzi AJAX,
+```text
+dfcollection/
+├── controllers/
+│   └── front/
+│       ├── bundlecart.php
+│       └── switch.php
+├── img/
+├── views/
+│   ├── css/
+│   │   ├── admin.css
+│   │   └── dfcollection.css
+│   ├── js/
+│   │   ├── dfc-admin-sort.js
+│   │   └── dfcollection.js
+│   └── templates/
+│       ├── admin/
+│       │   └── config.tpl
+│       └── hook/
+│           ├── dfcollection.tpl
+│           └── partials/
+│               ├── main.tpl
+│               └── slider.tpl
+├── docs/
+│   └── images/
+├── config_pl.xml
+├── dfcollection.php
+├── README.md
+└── README_EN.md
+```
 
-animacje lewej strony,
+Rzeczywista struktura może zawierać dodatkowe pliki techniczne zależne od wersji modułu.
 
-animacje featured produktu,
+## Hooki PrestaShop
 
-lazy loading obrazów w sliderze,
+### `displayHome`
 
-manual dots,
+Renderuje główną sekcję kolekcji na stronie głównej.
 
-bundle summary,
+### `displayHeader`
 
-add to cart bundle,
+Ładuje zasoby frontowe:
 
-overlay aranżacji,
+- arkusz CSS,
+- JavaScript,
+- definicje JavaScript,
+- adres kontrolera `switch`,
+- adres kontrolera `bundlecart`.
 
-short description expand/collapse,
+### `displayBackOfficeHeader`
 
-synchronizację elementów po przełączeniu kolekcji,
+Ładuje zasoby panelu administracyjnego:
 
-dynamiczną podmianę sekcji countdownu produktu polecanego,
+- CSS admina,
+- JavaScript admina,
+- jQuery,
+- Select2,
+- Sortable.
 
-ponowną inicjalizację countdownu po AJAX-ie,
+## Baza danych
 
-obsługę stanów technicznych loading / ready dla countdownu,
+### `ps_dfcollection`
 
-odświeżenie miniaturek i eventów po podmianie DOM.
+Główna tabela kolekcji.
 
-4.6. CSS frontowy
+Najważniejsze pola:
 
-views/css/dfcollection.css
+| Pole | Zastosowanie |
+|---|---|
+| `id_dfcollection` | Identyfikator kolekcji |
+| `position` | Pozycja na liście |
+| `active` | Status aktywności |
+| `id_category` | Powiązana kategoria |
+| `id_featured_product` | Produkt polecany |
+| `show_featured_countdown` | Włączenie countdownu |
+| `title` | Własny tytuł kolekcji |
+| `image_url` | Obraz desktop |
+| `image_url_mobile` | Obraz mobile |
+| `image_url_xs` | Obraz small |
+| `image_compare_url` | Drugi obraz compare |
+| `arrangement_image_url` | Zdjęcie aranżacji |
+| `compare_start_percent` | Pozycja startowa suwaka |
+| `compare_label` | Etykieta trybu compare |
+| `slider_limit` | Limit produktów |
+| `slider_infinite` | Tryb zapętlenia |
+| `slider_sort` | Sposób sortowania |
+| `short_description` | Krótki opis |
+| `collection_scope` | Zakres kolekcji |
+| `badge_1`–`badge_4` | Cechy kolekcji |
 
-Odpowiada za pełny wygląd sekcji kolekcji na froncie.
+Prefiks tabeli może być inny niż `ps_`, zależnie od konfiguracji instalacji PrestaShop.
 
-4.7. Szablon admina
+### `ps_dfcollection_bundle_item`
 
-views/templates/admin/config.tpl
+Tabela produktów w zestawach.
 
-Zawiera:
+| Pole | Zastosowanie |
+|---|---|
+| `id_dfcollection_bundle_item` | Identyfikator elementu |
+| `id_dfcollection` | Powiązana kolekcja |
+| `id_product` | Produkt PrestaShop |
+| `custom_label` | Własna etykieta |
+| `position` | Kolejność |
+| `active` | Status aktywności |
 
-formularz tworzenia i edycji kolekcji,
+## Cache
 
-dynamiczne preview produktu polecanego,
+Moduł posiada własny cache HTML dla hooka `displayHome`.
 
-dynamiczne odblokowanie opcji countdownu po wyborze produktu polecanego,
+Domyślna lokalizacja:
 
-sekcję ustawień modułu,
+```text
+/var/cache/prod/dfcollection/
+```
 
-sekcję bundle,
+Klucz cache uwzględnia między innymi:
 
-upload obrazów,
+- sklep,
+- język,
+- walutę,
+- grupy klientów,
+- wersję,
+- czas ostatniej zmiany danych modułu.
 
-tabelę wszystkich kolekcji,
+Cache jest unieważniany po operacjach takich jak:
 
-akcje: edycja, kopiowanie, usuwanie,
+- zapis kolekcji,
+- kopiowanie,
+- usuwanie,
+- zmiana kolejności,
+- aktualizacja konfiguracji.
 
-preview produktów i obrazów.
+Mechanizm `mtime` pozwala unieważnić wcześniejsze pliki cache bez konieczności ręcznego zarządzania każdym kluczem.
 
-4.8. CSS admina
+## Integracje
 
-views/css/admin.css
+### Moduł darmowej dostawy
 
-Styluje cały panel konfiguracyjny modułu w BO.
+DF Collection może pobierać próg darmowej dostawy dla kategorii aktualnej kolekcji.
 
-4.9. JavaScript admina
+Integracja jest wykonywana tylko wtedy, gdy odpowiedni moduł jest zainstalowany i dostępny.
 
-views/js/dfc-admin-sort.js
+### Dane dostawy produktów
 
-Obsługuje przede wszystkim:
+Dla produktów znajdujących się w bundle moduł może pobierać:
 
-sortowanie drag and drop,
+- tekst dostawy,
+- koszt dostawy,
+- próg darmowej dostawy,
+- automatyczny tekst listingowy.
 
-AJAX zapisu pozycji,
+### Moduł countdown
 
-inicjalizacje pomocnicze w panelu.
+Countdown produktu polecanego jest renderowany przez hook zewnętrznego modułu.
 
-Dodatkowa logika inline JS jest też w config.tpl.
+Po zmianie kolekcji przez AJAX wykonywana jest ponowna inicjalizacja jego warstwy JavaScript.
 
-4.10. Inline JavaScript w config.tpl
+## Instalacja
 
-Oprócz osobnego pliku views/js/dfc-admin-sort.js moduł posiada także dodatkową logikę inline JS osadzoną bezpośrednio w config.tpl.
+1. Skopiuj katalog modułu do:
 
-Ta logika odpowiada za:
+```text
+/modules/dfcollection/
+```
 
-obsługę pól uploadu plików,
+2. Zaloguj się do panelu administracyjnego PrestaShop.
 
-aktualizację wartości suwaka compare_start_percent,
+3. Przejdź do:
 
-preview produktu polecanego,
+```text
+Moduły → Menedżer modułów
+```
 
-dynamiczne odblokowanie toggle countdownu po wyborze produktu polecanego,
+4. Wyszukaj `DF Collection`.
 
-aktualizację tekstowego stanu countdownu w preview produktu,
+5. Zainstaluj i skonfiguruj moduł.
 
-preview produktów bundle,
+6. Upewnij się, że moduł jest podpięty do hooka:
 
-obsługę pola wykluczonych kategorii,
-
-inicjalizację select2 dla produktu polecanego i bundle.
-
-5. Hooki używane przez moduł
-
+```text
 displayHome
-
-Najważniejszy hook frontowy. Moduł renderuje tutaj sekcję kolekcji.
-
-displayHeader
-
-Ładuje:
-
-CSS modułu,
-
-JS modułu,
-
-Media::addJsDef z konfiguracją frontu, np. URL do AJAX switch i bundlecart.
-
-displayBackOfficeHeader
-
-Ładuje:
-
-CSS admina,
-
-JS admina,
-
-jQuery,
-
-Select2,
-
-Sortable.
-
-6. Baza danych
-
-6.1. Tabela główna
-
-ps_dfcollection
-
-Przechowuje dane kolekcji.
-
-Najważniejsze pola:
-
-id_dfcollection
-
-position
-
-active
-
-id_category
-
-id_featured_product
-
-show_featured_countdown
-
-title
-
-image_url
-
-image_url_mobile
-
-image_url_xs
-
-image_compare_url
-
-arrangement_image_url
-
-compare_start_percent
-
-compare_label
-
-slider_limit
-
-slider_infinite
-
-slider_sort
-
-short_description
-
-collection_scope
-
-badge_1
-
-badge_2
-
-badge_3
-
-badge_4
-
-6.2. Tabela bundle
-
-ps_dfcollection_bundle_item
-
-Przechowuje elementy zestawu „najczęściej kupowane razem”.
-
-Najważniejsze pola:
-
-id_dfcollection_bundle_item
-
-id_dfcollection
-
-id_product
-
-custom_label
-
-position
-
-active
-
-7. Instalacja modułu
-
-Co robi install()
+```
 
 Podczas instalacji moduł:
 
-tworzy / aktualizuje tabele bazy,
+- tworzy wymagane tabele,
+- zapisuje wartości domyślne,
+- rejestruje hooki,
+- przygotowuje katalog obrazów.
 
-zapisuje domyślne konfiguracje:
+## Wymagania
 
-DFC_HEADING
+- PrestaShop 8.x,
+- PHP 8.x,
+- MySQL lub MariaDB,
+- włączony JavaScript w przeglądarce,
+- prawa zapisu do katalogu modułu,
+- prawa zapisu do katalogu cache,
+- dostępność hooka `displayHome`.
+
+Niektóre funkcje wymagają opcjonalnych modułów zewnętrznych, na przykład modułu countdown lub modułu danych dostawy.
+
+## Bezpieczeństwo i walidacja
+
+Moduł uwzględnia między innymi:
 
-DFC_HEADING_LINK_CATEGORY
+- walidację typów przesyłanych plików,
+- kontrolę MIME,
+- generowanie unikalnych nazw obrazów,
+- usuwanie wyłącznie plików lokalnych należących do modułu,
+- rzutowanie identyfikatorów numerycznych,
+- korzystanie z metod zapytań PrestaShop,
+- kontrolę aktywności rekordów,
+- walidację danych wejściowych kontrolerów AJAX,
+- oddzielenie logiki przełączania kolekcji od operacji koszyka.
 
-DFC_EXCLUDED_CATEGORY_ROOTS
+## Obsługiwane scenariusze
 
-DFC_CACHE_MTIME
+Moduł uwzględnia między innymi sytuacje, w których:
 
-rejestruje hooki:
+- kolekcja nie posiada produktu polecanego,
+- countdown jest wyłączony,
+- kategoria nie posiada aktywnych produktów,
+- brak jest obrazu mobilnego,
+- brak jest obrazu compare,
+- brak jest zdjęcia aranżacji,
+- kolekcja nie posiada produktów bundle,
+- produkt polecany znajduje się również w kategorii slidera,
+- odpowiedź AJAX została już pobrana wcześniej,
+- zewnętrzny moduł dostawy jest niedostępny,
+- zewnętrzny moduł countdown wymaga ponownej inicjalizacji,
+- slider musi zostać zniszczony i utworzony ponownie,
+- kolekcja jest kopiowana razem z lokalnymi obrazami,
+- rekord kolekcji jest usuwany wraz z zależnymi danymi.
 
-displayHome
+## Kluczowe decyzje projektowe
 
-displayHeader
+### Oddzielne kontrolery AJAX
 
-displayBackOfficeHeader
+Przełączanie kolekcji i dodawanie zestawu do koszyka zostały rozdzielone na dwa kontrolery.
 
-tworzy katalog na obrazy modułu.
+Ułatwia to:
 
-Katalog obrazów
+- utrzymanie kodu,
+- walidację,
+- obsługę błędów,
+- rozwój kolejnych operacji AJAX.
 
-Obrazy uploadowane przez BO trafiają do:
+### Fizyczne kopiowanie obrazów
 
-/modules/dfcollection/img/
+Podczas duplikowania kolekcji moduł tworzy nowe pliki zamiast ponownie używać tych samych adresów.
 
-Moduł sam pilnuje istnienia tego katalogu przez ensureUploadDir().
+Zapobiega to przypadkowemu usunięciu obrazu wykorzystywanego przez oryginalny rekord.
 
-8. Upload obrazów
+### Cache z wersjonowaniem `mtime`
 
-Moduł obsługuje upload:
+Zmiana danych aktualizuje znacznik czasu konfiguracji. Dzięki temu kolejne żądania korzystają z nowego klucza cache bez skomplikowanej ewidencji wszystkich istniejących plików.
 
-JPG,
+### Ponowna inicjalizacja po zmianie DOM
 
-PNG.
+Elementy zależne od JavaScript, takie jak:
 
-Bez rekompresji.
+- slider,
+- countdown,
+- compare,
+- bundle,
+- lazy loading,
 
-Obsługiwane pola uploadu
+są inicjalizowane ponownie po każdej podmianie zawartości przez AJAX.
 
-image_file – desktop,
+## Technologie
 
-image_mobile_file – mobile,
+- PHP 8,
+- PrestaShop Module API,
+- Smarty,
+- MySQL,
+- JavaScript ES6,
+- AJAX,
+- jQuery,
+- Slick Slider,
+- Select2,
+- Sortable,
+- HTML5,
+- CSS3.
 
-image_xs_file – small,
-
-image_compare_file – compare,
-
-arrangement_image_file – aranżacja.
-
-Co robi upload
-
-handleImageUpload():
-
-waliduje obecność pliku,
-
-sprawdza rozmiar,
-
-sprawdza MIME,
-
-generuje nową nazwę pliku,
-
-zapisuje plik do /modules/dfcollection/img/,
-
-zwraca nowy URL pliku.
-
-9. Kopiowanie kolekcji
-
-Moduł posiada funkcję kopiowania kolekcji z poziomu BO.
-
-Co robi kopiowanie
-
-Po kliknięciu „Kopiuj”:
-
-tworzony jest nowy rekord w ps_dfcollection,
-
-ustawiana jest nowa pozycja na końcu listy,
-
-kolekcja dostaje nowy tytuł z dopiskiem (kopia),
-
-status nowej kopii ustawiany jest jako nieaktywna (active = 0),
-
-wszystkie obrazy lokalne modułu są fizycznie duplikowane jako nowe pliki,
-
-nowe obrazy dostają nowe nazwy i nowe URL-e,
-
-kopiowane są wszystkie dane kolekcji,
-
-kopiowane są także produkty bundle.
-
-Ważne
-
-To nie jest kopiowanie samych URL-i. Dla lokalnych plików modułu wykonywane jest prawdziwe copy() pliku, więc:
-
-klon ma nowe pliki,
-
-usunięcie obrazu z klona nie usuwa obrazu z oryginału,
-
-oryginał i kopia są od siebie niezależne.
-
-Funkcje odpowiedzialne
-
-duplicateLocalImage()
-
-duplicateBundleItems()
-
-blok if (Tools::isSubmit('dfc_duplicate')) w getContent()
-
-10. Usuwanie kolekcji
-
-Po usunięciu kolekcji moduł:
-
-pobiera URL-e zapisanych obrazów,
-
-usuwa lokalne pliki z katalogu modułu,
-
-usuwa bundle items tej kolekcji,
-
-usuwa rekord z ps_dfcollection,
-
-przelicza pozycje od nowa,
-
-czyści cache modułu.
-
-Za usuwanie plików odpowiada:
-
-tryUnlinkIfLocal()
-
-11. Cache
-
-Moduł ma własny prosty cache HTML dla displayHome.
-
-Lokalizacja cache
-
-/var/cache/prod/dfcollection/
-
-Jak działa
-
-Cache jest budowany per:
-
-shop,
-
-language,
-
-currency,
-
-groups,
-
-version,
-
-mtime modułu.
-
-Najważniejsze funkcje
-
-dfcCacheEnabled()
-
-dfcGetCacheDir()
-
-dfcGetContextCacheKey()
-
-dfcCacheRead()
-
-dfcCacheWrite()
-
-dfcCacheClearAllFiles()
-
-dfcCacheBumpMtime()
-
-Kiedy cache jest czyszczony
-
-Po zmianach w module, np.:
-
-zapis kolekcji,
-
-usunięcie kolekcji,
-
-kopiowanie kolekcji,
-
-zmiana kolejności.
-
-12. Logika danych na froncie
-
-Najważniejszą metodą jest:
-
-buildFrontData()
-
-To ona przygotowuje pełen zestaw danych do templatek frontowych, m.in.:
-
-obrazy kolekcji,
-
-featured product,
-
-stan i render countdownu produktu polecanego,
-
-slider produktów,
-
-najniższą cenę,
-
-darmową dostawę,
-
-badge,
-
-opis,
-
-collection scope,
-
-bundle items,
-
-kwoty bundle,
-
-delivery text bundle.
-
-Metoda łączy dane z:
-
-tabel modułu,
-
-kategorii PrestaShop,
-
-produktów PrestaShop,
-
-modułu freelivery,
-
-tabel dfdeliveryinfo_product_source.
-
-13. Dane pobierane z innych modułów / tabel
-
-13.1. freelivery
-
-Jeżeli moduł freelivery jest zainstalowany i aktywny, dfcollection pobiera próg darmowej dostawy dla danej kolekcji.
-
-Funkcja:
-
-getCollectionFreeShippingFromData()
-
-13.2. dfdeliveryinfo_product_source
-
-Z tej tabeli moduł pobiera dane dostawy dla produktów bundle:
-
-tekst dostawy,
-
-koszt dostawy,
-
-darmową dostawę od,
-
-listing delivery text auto.
-
-Funkcja:
-
-getDeliveryInfoForProduct()
-
-14. Najważniejsze metody pomocnicze w module
-
-Produkty i listing
-
-presentProductsForListing()
-
-presentFromCategory()
-
-presentOneById()
-
-Countdown produktu polecanego
-
-logika opiera się na polu show_featured_countdown oraz id_featured_product,
-
-render countdownu na froncie jest powiązany bezpośrednio z aktualnym produktem polecanym,
-
-po zmianie kolekcji countdown jest synchronizowany przez AJAX i ponowną inicjalizację w dfcollection.js.
-
-Ceny i kolekcje
-
-getCollectionProductsCount()
-
-getCollectionLowestPriceData()
-
-getCollectionFreeShippingFromData()
-
-Bundle
-
-getBundleItems()
-
-saveBundleItems()
-
-deleteBundleItems()
-
-getBundleItemsFromRequest()
-
-getBundleFrontItems()
-
-duplicateBundleItems()
-
-getBundleDeliveryText()
-
-getBundleTotalPriceAmount()
-
-getBundleTotalRegularPriceAmount()
-
-getBundleTotalSavingsAmount()
-
-getBundleShippingFromAmount()
-
-formatBundleAmount()
-
-Upload / obrazy
-
-ensureUploadDir()
-
-handleImageUpload()
-
-tryUnlinkIfLocal()
-
-duplicateLocalImage()
-
-probeImageSize()
-
-probeImageDims()
-
-Kategorie i produkty do BO
-
-getCategoryOptions()
-
-getProductOptions()
-
-getExcludedCategoryRootIds()
-
-saveExcludedCategoryRootIds()
-
-getCategoryTreeIds()
-
-Cache
-
-dfcCacheEnabled()
-
-dfcGetCacheDir()
-
-dfcGetContextCacheKey()
-
-dfcCacheRead()
-
-dfcCacheWrite()
-
-dfcCacheClearAllFiles()
-
-dfcCacheBumpMtime()
-
-15. Jak wygląda praca w BO
-
-Tworzenie nowej kolekcji
-
-wejść w konfigurację modułu,
-
-ustawić kategorię,
-
-wybrać produkt polecany,
-
-opcjonalnie włączyć countdown z produktu polecanego,
-
-ustawić tytuł lub zostawić pusty,
-
-ustawić limity i sortowanie slidera,
-
-dodać opis, badge, zakres kolekcji,
-
-wgrać obrazy,
-
-opcjonalnie ustawić compare i aranżację,
-
-opcjonalnie zbudować bundle,
-
-zapisać.
-
-Edycja kolekcji
-
-W tabeli kliknąć Edytuj.
-
-Kopiowanie kolekcji
-
-W tabeli kliknąć Kopiuj.
-
-Usuwanie kolekcji
-
-W tabeli kliknąć Usuń.
-
-Sortowanie kolekcji
-
-W tabeli przeciągać wiersze drag-and-drop.
-
-16. Co jest ważne przy rozwijaniu modułu
-
-16.1. Jeśli zmieniasz dane kolekcji
-
-Po każdej zmianie trzeba pamiętać o cache.
-
-Najlepiej zawsze wywołać:
-
-$this->dfcCacheBumpMtime();
-
-16.2. Jeśli dodajesz nowe pola do kolekcji
-
-Trzeba zaktualizować:
-
-installDb() – nowa kolumna,
-
-ewentualną metodę ensure...Col(),
-
-formularz config.tpl,
-
-zapis w getContent(),
-
-ładowanie danych do edycji,
-
-buildFrontData(),
-
-front tpl / js, jeśli pole jest używane na froncie,
-
-kopiowanie kolekcji, jeśli pole ma być kopiowane.
-
-16.3. Jeśli dodajesz nowe obrazy
-
-Trzeba obsłużyć:
-
-upload,
-
-usuwanie,
-
-kopiowanie,
-
-podgląd w adminie,
-
-ewentualnie preload / AJAX na froncie.
-
-16.4. Jeśli dodajesz nowe funkcje AJAX frontowe
-
-Najlepiej robić to przez osobny front controller modułu, a nie przez mieszanie wszystkiego w jednym switch controllerze.
-
-17. Typowe problemy i na co uważać
-
-Problem: po zmianach nie widać efektu na froncie
-
-Najczęstsza przyczyna:
-
-cache modułu,
-
-cache PrestaShop,
-
-cache przeglądarki,
-
-brak bump mtime.
-
-Problem: obraz usunięty z kopii usuwa się też z oryginału
-
-To nie powinno się dziać, jeśli obraz został skopiowany przez duplicateLocalImage() i ma nowy plik.
-
-Problem: kolekcja po kopiowaniu nie ma nowego obrazu
-
-Sprawdzić:
-
-czy obraz był lokalny i znajdował się w /modules/dfcollection/img/,
-
-czy copy() przeszło poprawnie,
-
-czy plik źródłowy istniał,
-
-czy prawa zapisu do katalogu są poprawne.
-
-Problem: slider nie odświeża się poprawnie po AJAX
-
-Sprawdzić:
-
-dfcollection.js,
-
-czy po podmianie HTML odpalany jest initSlider(),
-
-czy po slick('unslick') i nowym HTML slider jest ponownie inicjalizowany.
-
-Problem: bundle nie przelicza się poprawnie
-
-Sprawdzić:
-
-renderBundleSummary()
-
-calculateBundleSummary()
-
-poprawność data-price-amount i data-regular-price-amount w HTML.
-
-18. Co zawiera admin config.tpl
-
-Panel admina jest podzielony logicznie na:
-
-Sekcja ustawień modułu
-
-nazwa sekcji,
-
-link nagłówka,
-
-wykluczone kategorie dla wyboru produktów.
-
-Sekcja ustawień kolekcji
-
-aktywność,
-
-kategoria,
-
-produkt polecany,
-
-toggle countdownu z produktu polecanego,
-
-preview produktu polecanego ze stanem countdownu,
-
-tytuł,
-
-slider limit,
-
-slider sort,
-
-slider infinite,
-
-compare start,
-
-compare label,
-
-short description,
-
-collection scope,
-
-bundle,
-
-badge.
-
-Sekcja obrazów
-
-desktop,
-
-compare,
-
-aranżacja,
-
-mobile,
-
-small.
-
-Stopka formularza
-
-wyczyść formularz,
-
-zapisz,
-
-kopiuj,
-
-usuń.
-
-Tabela kolekcji
-
-Pokazuje wszystkie rekordy z akcjami.
-
-19. Co zawiera dfcollection.js
-
-To bardzo ważny plik. Odpowiada praktycznie za całe życie sekcji na froncie.
-
-Najważniejsze obszary:
-
-helpery DOM,
-
-preload i cache obrazów,
-
-cache odpowiedzi AJAX,
-
-przełączanie kolekcji,
-
-sticky bar kolekcji,
-
-synchronizacja sticky bara z głównymi tabsami,
-
-sticky arrows i sticky counter,
-
-sticky scrollbar dla tabsów,
-
-pokazywanie i ukrywanie sticky bara zależnie od scrolla,
-
-ukrywanie widgetu Cookiebot przy aktywnym sticky barze,
-
-animacja lewej części,
-
-animacja featured,
-
-obsługa compare,
-
-obsługa slidera Slick,
-
-manualne kropki,
-
-lazy loading obrazów w sliderze,
-
-bundle summary i add to cart,
-
-overlay aranżacji,
-
-tabs drag / scrollbar,
-
-synchronizacja dynamicznie podmienianych sekcji po AJAX-ie,
-
-aktualizacja dfc-lowest-price,
-
-aktualizacja dfc-badges,
-
-aktualizacja dfc-short-description,
-
-aktualizacja dfc-collection-scope,
-
-aktualizacja sekcji countdownu produktu polecanego,
-
-ponowna inicjalizacja countdownu po AJAX-ie,
-
-obsługa klas technicznych is-loading / is-ready dla countdownu,
-
-aktualizacja bundle section.
-
-Jeśli coś na froncie wizualnie zmienia się po przełączaniu kolekcji, prawie na pewno logika jest w dfcollection.js.
-
-20. Szybka mapa: gdzie czego szukać
-
-Chcę zmienić wygląd frontu
-
-Szukaj w:
-
-views/css/dfcollection.css
-
-views/templates/hook/*.tpl
-
-Chcę zmienić zachowanie AJAX przełączania
-
-Szukaj w:
-
-views/js/dfcollection.js
-
-controllers/front/switch.php
-
-Chcę zmienić countdown produktu polecanego
-
-Szukaj w:
-
-views/templates/hook/partials/main.tpl
-
-views/js/dfcollection.js
-
-views/templates/admin/config.tpl
-
-Chcę zmienić dane zwracane do frontu
-
-Szukaj w:
-
-dfcollection.php
-
-buildFrontData()
-
-controllers/front/switch.php
-
-Chcę zmienić zapis / edycję kolekcji w adminie
-
-Szukaj w:
-
-getContent() w dfcollection.php
-
-views/templates/admin/config.tpl
-
-Chcę zmienić upload obrazów
-
-Szukaj w:
-
-handleImageUpload()
-
-duplicateLocalImage()
-
-tryUnlinkIfLocal()
-
-Chcę zmienić bundle
-
-Szukaj w:
-
-getBundleItems()
-
-saveBundleItems()
-
-getBundleFrontItems()
-
-views/templates/hook/partials/main.tpl
-
-views/js/dfcollection.js
-
-21. Podsumowanie
-
-dfcollection to rozbudowany, sprzedażowy moduł homepage, który łączy kilka warstw naraz:
-
-prezentację kolekcji,
-
-produkt polecany,
-
-countdown produktu polecanego,
-
-slider produktów,
-
-compare image,
-
-aranżację,
-
-bundle,
-
-dane cenowe,
-
-próg darmowej dostawy,
-
-AJAX-owe przełączanie,
-
-własny panel administracyjny,
-
-upload i kopiowanie obrazów,
-
-własny cache HTML.
-
-Najważniejsze rzeczy do zapamiętania:
-
-główna logika siedzi w dfcollection.php,
-
-front żyje głównie przez dfcollection.js,
-
-render homepage idzie przez displayHome,
-
-dane kolekcji siedzą w ps_dfcollection,
-
-bundle siedzi w ps_dfcollection_bundle_item,
-
-obrazy modułu siedzą w /modules/dfcollection/img/,
-
-kopiowanie kolekcji robi nowe ID i nowe pliki obrazów,
-
-po każdej zmianie danych trzeba pamiętać o cache.
-
-22. Rekomendacja do dalszego rozwoju
-
-Najbardziej naturalne kolejne kierunki rozwoju tego modułu to:
-
-overlay całej kolekcji ładowany AJAX-em,
-
-szybszy podgląd większej liczby produktów bez przechodzenia do kategorii,
-
-dalsze rozwinięcie bundle,
-
-jeszcze mocniejsze wykorzystanie danych kolekcji jako mini landing page na homepage.
-
-Jeżeli wracasz do tego modułu po czasie, zacznij od:
-
-przeczytania getContent() w dfcollection.php,
-
-sprawdzenia buildFrontData(),
-
-przejrzenia controllers/front/switch.php,
-
-przejrzenia views/js/dfcollection.js,
-
-dopiero potem wchodzenia w tpl i css.
-
-Warto też pilnować, aby wszystkie przyszłe dynamiczne elementy działające podobnie do countdownu były od razu projektowane w dwóch warstwach:
-
-logika renderu początkowego,
-
-logika ponownej inicjalizacji po AJAX-ie.
-
-To jest istotne szczególnie przy modułach zewnętrznych, które po podmianie DOM wymagają dodatkowego reinitu w JavaScript.
+## Możliwe kierunki rozwoju
+
+- pełny overlay kolekcji ładowany przez AJAX,
+- dodatkowy quick view produktów,
+- konfiguracja bundle z rabatem zestawowym,
+- wielojęzyczne pola opisów i badge,
+- obsługa WebP i AVIF,
+- automatyczna optymalizacja przesyłanych obrazów,
+- statystyki kliknięć kolekcji,
+- analityka wyboru produktów bundle,
+- lazy loading kolejnych kolekcji,
+- osobny serwis odpowiedzialny za budowanie danych frontowych,
+- przeniesienie całej logiki inline JavaScript do osobnych plików,
+- testy integracyjne kontrolerów AJAX,
+- automatyczne testy instalacji i migracji bazy danych.
+
+## Charakter projektu
+
+Projekt został wykonany jako dedykowane rozwiązanie komercyjne dla działającego sklepu internetowego.
+
+Repozytorium pełni funkcję prezentacji architektury, sposobu organizacji kodu oraz zakresu funkcjonalnego autorskiego modułu PrestaShop.
+
+Kod nie jest standardowym modułem marketplace i może zawierać integracje specyficzne dla środowiska docelowego.
+
+## Autor
+
+**Damian Perużyński**
+
+Projekt i implementacja autorskiego modułu PrestaShop:
+
+- architektura backendu,
+- panel administracyjny,
+- kontrolery AJAX,
+- integracja z katalogiem produktów,
+- logika bundle,
+- obsługa obrazów,
+- cache,
+- interfejs użytkownika,
+- responsywność,
+- integracje z pozostałymi modułami sklepu.
