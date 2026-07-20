@@ -71,7 +71,6 @@ Projekt obsługuje wiele aktywnych kolekcji oraz rozbudowaną konfigurację z po
 ### Ustawienia modułu i obrazy kolekcji
 
 ![Ustawienia modułu DF Collection](docs/images/configuration1.png)
-![Ustawienia modułu DF Collection](./docs/images/configuration1.png?raw=true)
 
 Panel umożliwia ustawienie wspólnego nagłówka sekcji, linku prowadzącego do kategorii oraz kategorii wykluczonych z wyszukiwania produktów.
 
